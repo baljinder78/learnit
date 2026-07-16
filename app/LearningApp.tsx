@@ -4,12 +4,18 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   knowledgeLinks,
   systemCases,
-  totalTopics,
   visualLabels,
   weekOneLessons,
   weeks,
   type VisualKind,
 } from "./curriculum";
+import masteryData from "./mastery-data.json";
+
+type MasteryGroup = { title: string; items: string[]; prose: string[]; code: string[] };
+type MasterySubtopic = { id: string; title: string; groups: MasteryGroup[] };
+type MasteryTopic = { id: string; title: string; importance: string[]; subtopics: MasterySubtopic[] };
+type MasteryCurriculum = { title: string; topics: MasteryTopic[]; stats: { topics: number; subtopics: number; groups: number; learningPoints: number } };
+const mastery = masteryData as MasteryCurriculum;
 
 type Mode = "dashboard" | "roadmap" | "lesson" | "labs" | "practice" | "interview" | "revision" | "system";
 
@@ -21,6 +27,8 @@ type ProgressState = {
   streak: number;
   lastVisit: string;
   weakTopics: string[];
+  completedSubtopics: string[];
+  completedMasteryItems: string[];
 };
 
 const defaultProgress: ProgressState = {
@@ -31,6 +39,8 @@ const defaultProgress: ProgressState = {
   streak: 6,
   lastVisit: new Date().toISOString().slice(0, 10),
   weakTopics: ["Variance", "Promise cancellation", "React transitions"],
+  completedSubtopics: [],
+  completedMasteryItems: [],
 };
 
 const progressStore = {
@@ -145,9 +155,9 @@ export default function LearningApp() {
         </button>
         <div className="topbar-context">
           <span className="signal-dot" />
-          <span>Week 1</span>
+          <span>Topic 01</span>
           <span className="context-slash">/</span>
-          <strong>Runtime mechanics</strong>
+          <strong>JavaScript execution</strong>
         </div>
         <div className="topbar-actions">
           <button className="icon-button" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>
@@ -164,20 +174,35 @@ export default function LearningApp() {
             <button key={item.id} className={mode === item.id || (mode === "lesson" && item.id === "roadmap") ? "active" : ""} onClick={() => navigate(item.id)}>
               <span className="nav-icon"><Glyph name={item.icon} /></span>
               <span>{item.label}</span>
-              {item.id === "roadmap" && <small>8</small>}
+              {item.id === "roadmap" && <small>66</small>}
             </button>
           ))}
         </nav>
         <div className="sidebar-progress">
-          <div className="mini-ring" style={{ "--progress": "12%" } as React.CSSProperties}><span>12%</span></div>
-          <div><small>Roadmap progress</small><strong>{progress.completedLessons.length} lessons complete</strong></div>
+          <div className="mini-ring" style={{ "--progress": `${(progress.completedSubtopics.length / mastery.stats.subtopics) * 100}%` } as React.CSSProperties}><span>{Math.round((progress.completedSubtopics.length / mastery.stats.subtopics) * 100)}%</span></div>
+          <div><small>Mastery progress</small><strong>{progress.completedSubtopics.length} of {mastery.stats.subtopics} subtopics</strong></div>
         </div>
         <div className="sidebar-note"><span>⌁</span><p><strong>Local-first</strong>Your progress stays on this device.</p></div>
       </aside>
 
       <main id="main-content" className="main-content" tabIndex={-1}>
         {mode === "dashboard" && <Dashboard progress={progress} openLesson={openLesson} navigate={navigate} />}
-        {mode === "roadmap" && <Roadmap progress={progress} openLesson={openLesson} />}
+        {mode === "roadmap" && <Roadmap
+          progress={progress}
+          openLesson={openLesson}
+          toggleSubtopic={(id) => setProgress((current) => ({
+            ...current,
+            completedSubtopics: current.completedSubtopics.includes(id)
+              ? current.completedSubtopics.filter((item) => item !== id)
+              : [...current.completedSubtopics, id],
+          }))}
+          toggleMasteryItem={(id) => setProgress((current) => ({
+            ...current,
+            completedMasteryItems: current.completedMasteryItems.includes(id)
+              ? current.completedMasteryItems.filter((item) => item !== id)
+              : [...current.completedMasteryItems, id],
+          }))}
+        />}
         {mode === "lesson" && (
           <LessonView
             key={lessonId}
@@ -208,7 +233,7 @@ function Dashboard({ progress, openLesson, navigate }: { progress: ProgressState
     <div className="page dashboard-page">
       <section className="dashboard-hero">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> CURRENT FIELDWORK · WEEK 1</p>
+          <p className="eyebrow"><span /> CURRENT FIELDWORK · TOPIC 01</p>
           <h1>See the runtime.<br /><em>Explain the trade-off.</em></h1>
           <p className="hero-lede">A visual, practice-first path from JavaScript internals to frontend system design. Built for engineers who want a senior mental model—not another checklist.</p>
           <div className="hero-actions">
@@ -227,7 +252,7 @@ function Dashboard({ progress, openLesson, navigate }: { progress: ProgressState
       </section>
 
       <section className="metrics-strip" aria-label="Learning progress summary">
-        <Metric label="Overall" value="12%" detail={`${progress.completedLessons.length} of ${totalTopics} concepts`} tone="blue" />
+        <Metric label="Overall" value={`${Math.round((progress.completedSubtopics.length / mastery.stats.subtopics) * 100)}%`} detail={`${mastery.stats.topics} topics · ${mastery.stats.subtopics} subtopics`} tone="blue" />
         <Metric label="Focused time" value={`${Math.floor(progress.minutes / 60)}h ${progress.minutes % 60}m`} detail="+48m this week" tone="green" />
         <Metric label="Exercises" value={String(progress.exerciseRuns)} detail="3 passing" tone="orange" />
         <Metric label="Quiz accuracy" value={`${accuracy}%`} detail="2 concepts to revisit" tone="violet" />
@@ -236,7 +261,7 @@ function Dashboard({ progress, openLesson, navigate }: { progress: ProgressState
 
       <div className="dashboard-grid">
         <section className="panel current-week-panel">
-          <div className="panel-heading"><div><p className="eyebrow">CURRENT MAP</p><h2>Week 1 · Runtime mechanics</h2></div><button onClick={() => navigate("roadmap")}>Full week <Glyph name="arrow" /></button></div>
+          <div className="panel-heading"><div><p className="eyebrow">CURRENT MAP</p><h2>Foundation track · Runtime mechanics</h2></div><button onClick={() => navigate("roadmap")}>Full map <Glyph name="arrow" /></button></div>
           <div className="lesson-list">
             {weekOneLessons.slice(0, 6).map((lesson, index) => {
               const complete = progress.completedLessons.includes(lesson.id);
@@ -294,41 +319,94 @@ function EventLoopMini() {
   );
 }
 
-function Roadmap({ progress, openLesson }: { progress: ProgressState; openLesson: (id: string) => void }) {
-  const [expandedWeek, setExpandedWeek] = useState(1);
+function Roadmap({ progress, openLesson, toggleSubtopic, toggleMasteryItem }: { progress: ProgressState; openLesson: (id: string) => void; toggleSubtopic: (id: string) => void; toggleMasteryItem: (id: string) => void }) {
+  const [topicId, setTopicId] = useState("1");
+  const [subtopicId, setSubtopicId] = useState("1.1");
   const [query, setQuery] = useState("");
+  const topic = mastery.topics.find((item) => item.id === topicId) ?? mastery.topics[0];
+  const subtopic = topic.subtopics.find((item) => item.id === subtopicId) ?? topic.subtopics[0];
+  const allSubtopics = useMemo(() => mastery.topics.flatMap((item) => item.subtopics.map((entry) => ({ topic: item, subtopic: entry }))), []);
   const normalized = query.trim().toLowerCase();
-  const matches = useMemo(() => weeks.flatMap((week) => week.modules.flatMap((module) => module.topics.filter((topic) => topic.toLowerCase().includes(normalized)).map((topic) => ({ topic, week, module })))).slice(0, 24), [normalized]);
+  const matches = useMemo(() => normalized ? allSubtopics.filter(({ topic: item, subtopic: entry }) => {
+    const searchable = `${item.title} ${entry.title} ${entry.groups.flatMap((group) => [group.title, ...group.items, ...group.prose]).join(" ")}`.toLowerCase();
+    return searchable.includes(normalized);
+  }).slice(0, 40) : [], [allSubtopics, normalized]);
+  const currentIndex = allSubtopics.findIndex((item) => item.subtopic.id === subtopic.id);
+  const completedInTopic = topic.subtopics.filter((item) => progress.completedSubtopics.includes(item.id)).length;
+  const practicalGroups = subtopic.groups.filter((group) => /practical|mastery|exercise|implementation|practice/i.test(group.title));
+  const learningGroups = subtopic.groups.filter((group) => !practicalGroups.includes(group));
+
+  const selectTopic = (nextTopic: MasteryTopic) => {
+    setTopicId(nextTopic.id);
+    setSubtopicId(nextTopic.subtopics[0]?.id ?? `${nextTopic.id}.1`);
+  };
+  const selectSearchResult = (nextTopic: MasteryTopic, nextSubtopic: MasterySubtopic) => {
+    setTopicId(nextTopic.id);
+    setSubtopicId(nextSubtopic.id);
+    setQuery("");
+  };
+  const move = (delta: number) => {
+    const next = allSubtopics[Math.max(0, Math.min(allSubtopics.length - 1, currentIndex + delta))];
+    if (next) selectSearchResult(next.topic, next.subtopic);
+  };
 
   return (
-    <div className="page roadmap-page">
-      <PageIntro eyebrow="EIGHT-WEEK FIELD GUIDE" title="The roadmap" copy={`${totalTopics} connected concepts. Eight deliberate weeks. Every module moves from mental model to visual trace, production decision, practice, and interview explanation.`} />
-      <label className="global-search"><Glyph name="search" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find any concept, lab, or exercise…" /><kbd>⌘ K</kbd></label>
-      {normalized ? (
-        <section className="search-results"><p>{matches.length} matching concepts</p><div>{matches.map(({ topic, week, module }) => <button key={`${week.id}-${topic}`} onClick={() => week.id === 1 ? openLesson(bestLessonFor(topic)) : setExpandedWeek(week.id)}><span>W{week.id}</span><strong>{topic}</strong><small>{module.title}</small><Glyph name="arrow" /></button>)}</div></section>
-      ) : (
-        <div className="weeks-list">
-          {weeks.map((week) => {
-            const open = expandedWeek === week.id;
-            const topicCount = week.modules.reduce((sum, module) => sum + module.topics.length, 0);
-            return (
-              <section key={week.id} className={`week-block accent-${week.accent} ${open ? "open" : ""}`}>
-                <button className="week-summary" onClick={() => setExpandedWeek(open ? 0 : week.id)} aria-expanded={open}>
-                  <span className="week-number">0{week.id}</span>
-                  <span className="week-title"><small>{week.kicker}</small><strong>{week.title}</strong><em>{week.outcome}</em></span>
-                  <span className="week-meta"><small>{topicCount} concepts</small><small>{week.hours} focused hours</small></span>
-                  <span className="week-expand">{open ? "−" : "+"}</span>
-                </button>
-                {open && <div className="week-detail">
-                  {week.modules.map((module) => <div className="module-column" key={module.title}><div className="module-title"><span>{visualLabels[module.visual]}</span><h3>{module.title}</h3></div><div className="topic-chips">{module.topics.map((topic) => <button key={topic} onClick={() => week.id === 1 ? openLesson(bestLessonFor(topic)) : undefined}><span className={week.id === 1 && progress.completedLessons.includes(bestLessonFor(topic)) ? "done-dot" : "topic-dot"} />{topic}{week.id === 1 && <Glyph name="arrow" />}</button>)}</div></div>)}
-                </div>}
-              </section>
-            );
-          })}
-        </div>
-      )}
+    <div className="page roadmap-page mastery-page">
+      <PageIntro eyebrow="SEQUENTIAL FRONTEND KNOWLEDGE MAP" title="Complete mastery curriculum" copy={`${mastery.stats.topics} topics → ${mastery.stats.subtopics} subtopics → ${mastery.stats.groups} learning sections → ${mastery.stats.learningPoints.toLocaleString()} concepts, explanations, questions, and practical mastery points.`} />
+      <div className="mastery-summary" aria-label="Mastery curriculum statistics">
+        <span><strong>{mastery.stats.topics}</strong><small>Topics</small></span>
+        <span><strong>{mastery.stats.subtopics}</strong><small>Subtopics</small></span>
+        <span><strong>{mastery.stats.learningPoints.toLocaleString()}</strong><small>Learning points</small></span>
+        <span><strong>{progress.completedSubtopics.length}</strong><small>Completed</small></span>
+      </div>
+      <label className="global-search mastery-search"><Glyph name="search" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search every topic, subtopic, concept, question, or mastery task…" /><kbd>⌘ K</kbd></label>
+      {normalized && <section className="mastery-search-results"><div><span>SEARCHING THE FULL MAP</span><strong>{matches.length} results</strong></div>{matches.length ? matches.map(({ topic: item, subtopic: entry }) => <button key={`${item.id}-${entry.id}`} onClick={() => selectSearchResult(item, entry)}><span>{entry.id}</span><strong>{entry.title}</strong><small>{item.title}</small><Glyph name="arrow" /></button>) : <p>No matching learning point. Try a mechanism, API, failure mode, or implementation term.</p>}</section>}
+
+      {!normalized && <div className="mastery-shell">
+        <aside className="mastery-topics" aria-label="Sequential topics">
+          <div className="mastery-column-title"><span>01</span><div><small>LEVEL ONE</small><strong>Topics</strong></div></div>
+          <nav>{mastery.topics.map((item) => {
+            const completed = item.subtopics.filter((entry) => progress.completedSubtopics.includes(entry.id)).length;
+            return <button key={item.id} className={item.id === topic.id ? "active" : ""} onClick={() => selectTopic(item)}><span>{item.id.padStart(2, "0")}</span><div><strong>{item.title}</strong><small>{completed}/{item.subtopics.length} complete</small></div><i style={{ "--topic-progress": `${(completed / Math.max(item.subtopics.length, 1)) * 100}%` } as React.CSSProperties} /></button>;
+          })}</nav>
+        </aside>
+
+        <aside className="mastery-subtopics" aria-label={`Subtopics in ${topic.title}`}>
+          <div className="mastery-column-title"><span>02</span><div><small>LEVEL TWO</small><strong>Subtopics</strong></div></div>
+          <header><span>TOPIC {topic.id.padStart(2, "0")}</span><h2>{topic.title}</h2><p>{topic.importance.join(" ")}</p><div><i style={{ width: `${(completedInTopic / Math.max(topic.subtopics.length, 1)) * 100}%` }} /><small>{completedInTopic} of {topic.subtopics.length}</small></div></header>
+          <nav>{topic.subtopics.map((item, index) => <button key={item.id} className={`${item.id === subtopic.id ? "active" : ""} ${progress.completedSubtopics.includes(item.id) ? "complete" : ""}`} onClick={() => setSubtopicId(item.id)}><span>{progress.completedSubtopics.includes(item.id) ? <Glyph name="check" /> : String(index + 1).padStart(2, "0")}</span><strong>{item.title}</strong><small>{item.groups.reduce((sum, group) => sum + group.items.length + group.prose.length, 0)} points</small></button>)}</nav>
+        </aside>
+
+        <article className="mastery-detail" data-testid="mastery-detail">
+          <header className="mastery-detail-header"><div><p><span>TOPIC {topic.id.padStart(2, "0")}</span><Glyph name="arrow" /><span>SUBTOPIC {subtopic.id}</span></p><h1>{subtopic.title}</h1><p>{topic.title}</p></div><button className={progress.completedSubtopics.includes(subtopic.id) ? "completed" : ""} onClick={() => toggleSubtopic(subtopic.id)}><Glyph name={progress.completedSubtopics.includes(subtopic.id) ? "check" : "arrow"} />{progress.completedSubtopics.includes(subtopic.id) ? "Mastered" : "Mark mastered"}</button></header>
+
+          <div className="mastery-level-path"><span className="active"><i>1</i>Topic</span><Glyph name="arrow" /><span className="active"><i>2</i>Subtopic</span><Glyph name="arrow" /><span><i>3</i>Concepts</span><Glyph name="arrow" /><span><i>4</i>Understand</span><Glyph name="arrow" /><span><i>5</i>Practise</span></div>
+
+          <section className="mastery-importance"><span>WHY THIS BUILDS THE NEXT LAYER</span><p>{topic.importance.join(" ") || `${subtopic.title} is a required step in the sequence before moving to the next frontend engineering layer.`}</p></section>
+
+          {learningGroups.map((group, groupIndex) => <MasteryGroupView key={`${group.title}-${groupIndex}`} group={group} index={groupIndex} />)}
+
+          {practicalGroups.length > 0 && <section className="mastery-practice"><div className="mastery-group-heading"><span>05</span><div><small>PRACTICAL MASTERY</small><h2>Prove it through action</h2></div></div>{practicalGroups.map((group, groupIndex) => <div key={`${group.title}-${groupIndex}`}><h3>{group.title}</h3>{group.prose.map((text, index) => <p key={`${text}-${index}`}>{text}</p>)}<div className="mastery-checklist">{group.items.map((item, itemIndex) => {
+            const id = `${subtopic.id}:practice:${groupIndex}:${itemIndex}`;
+            const checked = progress.completedMasteryItems.includes(id);
+            return <label key={id} className={checked ? "checked" : ""}><input type="checkbox" checked={checked} onChange={() => toggleMasteryItem(id)} /><span><Glyph name={checked ? "check" : "arrow"} /></span><strong>{item}</strong></label>;
+          })}</div>{group.code.map((code, index) => <CodeBlock key={`${code}-${index}`} code={code} />)}</div>)}</section>}
+
+          <div className="mastery-deep-link"><div><small>INTERACTIVE DEEP DIVE</small><strong>Open the related visual lesson, execution trace, exercises, and interview questions.</strong></div><button className="secondary-button" onClick={() => openLesson(bestLessonFor(`${topic.title} ${subtopic.title}`))}>Open visual lesson <Glyph name="arrow" /></button></div>
+
+          <footer className="mastery-sequence"><button onClick={() => move(-1)} disabled={currentIndex <= 0}><Glyph name="previous" /><span><small>PREVIOUS</small><strong>{allSubtopics[currentIndex - 1]?.subtopic.title ?? "Start"}</strong></span></button><div><span>{currentIndex + 1}</span><i><b style={{ width: `${((currentIndex + 1) / allSubtopics.length) * 100}%` }} /></i><small>{allSubtopics.length}</small></div><button onClick={() => move(1)} disabled={currentIndex >= allSubtopics.length - 1}><span><small>NEXT IN SEQUENCE</small><strong>{allSubtopics[currentIndex + 1]?.subtopic.title ?? "Complete"}</strong></span><Glyph name="next" /></button></footer>
+        </article>
+      </div>}
     </div>
   );
+}
+
+function MasteryGroupView({ group, index }: { group: MasteryGroup; index: number }) {
+  const concepts = /concept|subtopic|types|methods|components|values|layers|states/i.test(group.title);
+  const questions = /question/i.test(group.title);
+  const understand = /understand|important|distinction|characteristic|benefit|caution|practice|risk|flow|sequence/i.test(group.title);
+  const label = concepts ? "IMPORTANT CONCEPTS" : questions ? "REASONING QUESTIONS" : understand ? "KEY THINGS TO UNDERSTAND" : group.title.toUpperCase();
+  return <section className={`mastery-group ${concepts ? "concept-group" : ""} ${questions ? "question-group" : ""}`}><div className="mastery-group-heading"><span>{String(Math.min(index + 3, 9)).padStart(2, "0")}</span><div><small>{label}</small><h2>{group.title}</h2></div></div>{group.prose.map((text, proseIndex) => <p key={`${text}-${proseIndex}`}>{text}</p>)}{group.items.length > 0 && (concepts ? <div className="mastery-concept-grid">{group.items.map((item, itemIndex) => <span key={`${item}-${itemIndex}`}><i>{String(itemIndex + 1).padStart(2, "0")}</i>{item}</span>)}</div> : <ul>{group.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}><span>{questions ? "?" : "→"}</span><p>{item}</p></li>)}</ul>)}{group.code.map((code, codeIndex) => <CodeBlock key={`${code}-${codeIndex}`} code={code} />)}</section>;
 }
 
 function bestLessonFor(topic: string) {

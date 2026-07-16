@@ -36,6 +36,19 @@ test("curriculum covers every requested week and remains data-driven", async () 
   assert.match(app, /weekOneLessons\.map/);
 });
 
+test("mastery map preserves the complete sequential curriculum hierarchy", async () => {
+  const data = JSON.parse(await readFile(new URL("app/mastery-data.json", root), "utf8"));
+  assert.equal(data.stats.topics, 66);
+  assert.equal(data.stats.subtopics, 374);
+  assert.ok(data.stats.learningPoints >= 2900);
+  assert.equal(data.topics[0].title, "How JavaScript Executes Code");
+  assert.equal(data.topics.at(-1).title, "Final Mastery Requirements");
+  const engine = data.topics[0].subtopics.find((item) => item.title === "JavaScript Engine");
+  assert.ok(engine.groups.some((group) => group.title === "Important concepts"));
+  assert.ok(engine.groups.some((group) => group.title === "Key things to understand"));
+  assert.ok(engine.groups.some((group) => group.title === "Practical mastery"));
+});
+
 test("primary learning flow includes persistence and accessible controls", async () => {
   const app = await readFile(new URL("app/LearningApp.tsx", root), "utf8");
   const css = await readFile(new URL("app/globals.css", root), "utf8");

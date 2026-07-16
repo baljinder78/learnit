@@ -5,7 +5,7 @@ Frontend Atlas is an interactive eight-week learning system for experienced fron
 ## What is implemented
 
 - A responsive dashboard with progress, streak, quiz, exercise, revision, and interview-readiness signals.
-- The complete eight-week curriculum in a data-driven model (300+ concepts across JavaScript, TypeScript, browser internals, networking, security, React, testing, accessibility, architecture, system design, AI, and interview preparation).
+- A complete sequential mastery map with 66 topics, 374 subtopics, 656 learning sections, and more than 2,900 concepts, explanations, questions, examples, and practical mastery tasks.
 - Twelve fully structured Week 1 lessons with all thirteen teaching sections requested in the brief.
 - A statement-by-statement event-loop lab with call stack, browser APIs, microtask queue, task queue, promise state, console output, play/pause, previous/next, restart, speed, and current-state inspection.
 - Reusable concept traces, code panels, ordering exercises, quizzes with feedback, production examples, architecture views, and interview prompts.
@@ -18,6 +18,7 @@ The project intentionally keeps content, product state, and rendering separate:
 
 ```text
 app/
+├── mastery-data.json  # Generated 66-topic sequential knowledge map
 ├── curriculum.ts      # Weeks, modules, topics, detailed Week 1 lessons, relationships
 ├── LearningApp.tsx    # Product modes, reusable visualizations, exercises, local adapter
 ├── page.tsx           # Route entry and page metadata
@@ -25,20 +26,28 @@ app/
 └── globals.css        # Visual system, diagrams, responsive and accessibility rules
 tests/
 └── rendered-html.test.mjs
+content/
+└── mastery-curriculum.md # Canonical curriculum source
+scripts/
+└── build-mastery-data.mjs # Reproducible Markdown-to-data parser
 ```
 
 Progress is accessed through a small storage adapter (`progressStore`) rather than directly throughout the UI. Replacing it with an authenticated backend later only requires changing that adapter and hydration strategy.
 
-The curriculum is modeled as `Week → Module → Topic`, with a `VisualKind` selecting the appropriate explanatory grammar. Detailed lessons are separate content objects so the roadmap can scale without putting curriculum prose inside page components.
+The full curriculum is modeled as `Topic → Subtopic → Learning group → Learning point`. Learning groups preserve important concepts, key things to understand, examples, questions, and practical mastery separately. The original guided lessons remain a deeper visual layer linked from the sequential map.
 
 ## Run locally
 
 Node.js 22.13 or newer is required.
 
 ```bash
+nvm install
+nvm use
 npm install
 npm run dev
 ```
+
+If a terminal still reports Node 20, run `nvm use` in that terminal before starting the app. Vinext relies on Node APIs that are unavailable in Node 20.
 
 Open the local URL printed by the development server.
 
@@ -54,9 +63,10 @@ npm test
 ## Extending the curriculum
 
 1. Add topics to the appropriate module in `app/curriculum.ts`.
-2. Add a detailed lesson object when the topic needs a full guided lesson.
-3. Choose the most accurate `VisualKind`, or add a new visual grammar when the mechanism cannot be taught well with an existing one.
-4. Add a focused test for any new state transition or persistence behavior.
+2. For the complete mastery map, edit `content/mastery-curriculum.md` and run `npm run content:build`.
+3. Add a detailed lesson object when the topic needs a full guided visual lesson.
+4. Choose the most accurate `VisualKind`, or add a new visual grammar when the mechanism cannot be taught well with an existing one.
+5. Add a focused test for any new state transition or persistence behavior.
 
 ## Roadmap mapping
 
