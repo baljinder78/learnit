@@ -3,6 +3,7 @@
   "topics": [
     {
       "id": "1",
+      "slug": "how-javascript-executes-code",
       "title": "How JavaScript Executes Code",
       "importance": [
         "Before learning frameworks or architecture, understand how JavaScript reads, prepares, and executes code. This knowledge helps debug scope problems, asynchronous behavior, memory issues, and unexpected runtime results."
@@ -10,6 +11,7 @@
       "subtopics": [
         {
           "id": "1.1",
+          "slug": "javascript-engine",
           "title": "JavaScript Engine",
           "groups": [
             {
@@ -65,6 +67,7 @@
         },
         {
           "id": "1.2",
+          "slug": "parsing-and-abstract-syntax-tree",
           "title": "Parsing and Abstract Syntax Tree",
           "groups": [
             {
@@ -120,6 +123,7 @@
         },
         {
           "id": "1.3",
+          "slug": "execution-context",
           "title": "Execution Context",
           "groups": [
             {
@@ -169,6 +173,7 @@
         },
         {
           "id": "1.4",
+          "slug": "call-stack",
           "title": "Call Stack",
           "groups": [
             {
@@ -222,6 +227,7 @@
     },
     {
       "id": "2",
+      "slug": "javascript-variables-scope-and-hoisting",
       "title": "JavaScript Variables, Scope, and Hoisting",
       "importance": [
         "Scope determines where data can be accessed. Poor understanding of scope causes hidden bugs, accidental mutation, stale values, and naming conflicts."
@@ -229,6 +235,7 @@
       "subtopics": [
         {
           "id": "2.1",
+          "slug": "variable-declarations",
           "title": "Variable Declarations",
           "groups": [
             {
@@ -290,6 +297,7 @@
         },
         {
           "id": "2.2",
+          "slug": "scope-types",
           "title": "Scope Types",
           "groups": [
             {
@@ -359,6 +367,7 @@
         },
         {
           "id": "2.3",
+          "slug": "scope-chain",
           "title": "Scope Chain",
           "groups": [
             {
@@ -391,6 +400,7 @@
         },
         {
           "id": "2.4",
+          "slug": "hoisting",
           "title": "Hoisting",
           "groups": [
             {
@@ -431,6 +441,7 @@
         },
         {
           "id": "2.5",
+          "slug": "temporal-dead-zone",
           "title": "Temporal Dead Zone",
           "groups": [
             {
@@ -461,6 +472,7 @@
         },
         {
           "id": "2.6",
+          "slug": "shadowing",
           "title": "Shadowing",
           "groups": [
             {
@@ -498,6 +510,7 @@
     },
     {
       "id": "3",
+      "slug": "javascript-data-types-and-values",
       "title": "JavaScript Data Types and Values",
       "importance": [
         "Understanding values and references is necessary for equality, mutation, copying, React state updates, memoization, and performance."
@@ -505,6 +518,7 @@
       "subtopics": [
         {
           "id": "3.1",
+          "slug": "primitive-types",
           "title": "Primitive Types",
           "groups": [
             {
@@ -536,6 +550,7 @@
         },
         {
           "id": "3.2",
+          "slug": "reference-values",
           "title": "Reference Values",
           "groups": [
             {
@@ -567,6 +582,7 @@
         },
         {
           "id": "3.3",
+          "slug": "numbers-and-floating-point-behavior",
           "title": "Numbers and Floating-Point Behavior",
           "groups": [
             {
@@ -606,6 +622,7 @@
         },
         {
           "id": "3.4",
+          "slug": "nan",
           "title": "NaN",
           "groups": [
             {
@@ -625,6 +642,7 @@
         },
         {
           "id": "3.5",
+          "slug": "null-and-undefined",
           "title": "Null and Undefined",
           "groups": [
             {
@@ -665,6 +683,7 @@
         },
         {
           "id": "3.6",
+          "slug": "type-coercion",
           "title": "Type Coercion",
           "groups": [
             {
@@ -711,6 +730,7 @@
         },
         {
           "id": "3.7",
+          "slug": "equality",
           "title": "Equality",
           "groups": [
             {
@@ -770,6 +790,7 @@
     },
     {
       "id": "4",
+      "slug": "functions-and-functional-concepts",
       "title": "Functions and Functional Concepts",
       "importance": [
         "Functions are central to JavaScript. React components, hooks, callbacks, middleware, event handlers, and asynchronous operations all depend on function behavior."
@@ -777,6 +798,7 @@
       "subtopics": [
         {
           "id": "4.1",
+          "slug": "function-types",
           "title": "Function Types",
           "groups": [
             {
@@ -811,6 +833,7 @@
         },
         {
           "id": "4.2",
+          "slug": "parameters-and-arguments",
           "title": "Parameters and Arguments",
           "groups": [
             {
@@ -844,6 +867,7 @@
         },
         {
           "id": "4.3",
+          "slug": "higher-order-functions",
           "title": "Higher-Order Functions",
           "groups": [
             {
@@ -887,6 +911,7 @@
         },
         {
           "id": "4.4",
+          "slug": "pure-functions",
           "title": "Pure Functions",
           "groups": [
             {
@@ -923,6 +948,7 @@
         },
         {
           "id": "4.5",
+          "slug": "recursion",
           "title": "Recursion",
           "groups": [
             {
@@ -952,6 +978,7 @@
         },
         {
           "id": "4.6",
+          "slug": "currying-and-partial-application",
           "title": "Currying and Partial Application",
           "groups": [
             {
@@ -989,6 +1016,7 @@
         },
         {
           "id": "4.7",
+          "slug": "debounce-and-throttle",
           "title": "Debounce and Throttle",
           "groups": [
             {
@@ -1036,6 +1064,7 @@
     },
     {
       "id": "5",
+      "slug": "closures",
       "title": "Closures",
       "importance": [
         "Closures power private state, callbacks, React hooks, memoization, event handlers, and many reusable JavaScript patterns."
@@ -1043,6 +1072,7 @@
       "subtopics": [
         {
           "id": "5.1",
+          "slug": "closure-definition",
           "title": "Closure Definition",
           "groups": [
             {
@@ -1060,6 +1090,7 @@
         },
         {
           "id": "5.2",
+          "slug": "private-state",
           "title": "Private State",
           "groups": [
             {
@@ -1076,6 +1107,7 @@
         },
         {
           "id": "5.3",
+          "slug": "function-factories",
           "title": "Function Factories",
           "groups": [
             {
@@ -1105,6 +1137,7 @@
         },
         {
           "id": "5.4",
+          "slug": "stale-closures",
           "title": "Stale Closures",
           "groups": [
             {
@@ -1136,6 +1169,7 @@
         },
         {
           "id": "5.5",
+          "slug": "closure-memory-problems",
           "title": "Closure Memory Problems",
           "groups": [
             {
@@ -1172,6 +1206,7 @@
     },
     {
       "id": "6",
+      "slug": "the-this-keyword",
       "title": "The this Keyword",
       "importance": [
         "Understanding this helps with object methods, legacy React code, callbacks, classes, and library APIs."
@@ -1179,6 +1214,7 @@
       "subtopics": [
         {
           "id": "6.1",
+          "slug": "default-binding",
           "title": "Default Binding",
           "groups": [
             {
@@ -1196,6 +1232,7 @@
         },
         {
           "id": "6.2",
+          "slug": "implicit-binding",
           "title": "Implicit Binding",
           "groups": [
             {
@@ -1212,6 +1249,7 @@
         },
         {
           "id": "6.3",
+          "slug": "lost-context",
           "title": "Lost Context",
           "groups": [
             {
@@ -1239,6 +1277,7 @@
         },
         {
           "id": "6.4",
+          "slug": "explicit-binding",
           "title": "Explicit Binding",
           "groups": [
             {
@@ -1279,6 +1318,7 @@
         },
         {
           "id": "6.5",
+          "slug": "constructor-binding",
           "title": "Constructor Binding",
           "groups": [
             {
@@ -1298,6 +1338,7 @@
         },
         {
           "id": "6.6",
+          "slug": "arrow-function-binding",
           "title": "Arrow Function Binding",
           "groups": [
             {
@@ -1317,6 +1358,7 @@
     },
     {
       "id": "7",
+      "slug": "objects-prototypes-and-classes",
       "title": "Objects, Prototypes, and Classes",
       "importance": [
         "JavaScript uses prototype-based inheritance. Understanding it is necessary for classes, object behavior, library internals, and efficient design."
@@ -1324,6 +1366,7 @@
       "subtopics": [
         {
           "id": "7.1",
+          "slug": "object-creation",
           "title": "Object Creation",
           "groups": [
             {
@@ -1356,6 +1399,7 @@
         },
         {
           "id": "7.2",
+          "slug": "prototype-chain",
           "title": "Prototype Chain",
           "groups": [
             {
@@ -1387,6 +1431,7 @@
         },
         {
           "id": "7.3",
+          "slug": "constructor-functions",
           "title": "Constructor Functions",
           "groups": [
             {
@@ -1411,6 +1456,7 @@
         },
         {
           "id": "7.4",
+          "slug": "classes",
           "title": "Classes",
           "groups": [
             {
@@ -1442,6 +1488,7 @@
         },
         {
           "id": "7.5",
+          "slug": "inheritance-versus-composition",
           "title": "Inheritance Versus Composition",
           "groups": [
             {
@@ -1477,6 +1524,7 @@
         },
         {
           "id": "7.6",
+          "slug": "property-descriptors",
           "title": "Property Descriptors",
           "groups": [
             {
@@ -1509,6 +1557,7 @@
         },
         {
           "id": "7.7",
+          "slug": "shallow-and-deep-copying",
           "title": "Shallow and Deep Copying",
           "groups": [
             {
@@ -1559,6 +1608,7 @@
     },
     {
       "id": "8",
+      "slug": "arrays-and-data-transformation",
       "title": "Arrays and Data Transformation",
       "importance": [
         "Frontend applications constantly transform server responses, lists, tables, forms, and UI state."
@@ -1566,6 +1616,7 @@
       "subtopics": [
         {
           "id": "8.1",
+          "slug": "array-mutation-methods",
           "title": "Array Mutation Methods",
           "groups": [
             {
@@ -1597,6 +1648,7 @@
         },
         {
           "id": "8.2",
+          "slug": "non-mutating-methods",
           "title": "Non-Mutating Methods",
           "groups": [
             {
@@ -1630,6 +1682,7 @@
         },
         {
           "id": "8.3",
+          "slug": "map",
           "title": "map",
           "groups": [
             {
@@ -1654,6 +1707,7 @@
         },
         {
           "id": "8.4",
+          "slug": "filter",
           "title": "filter",
           "groups": [
             {
@@ -1678,6 +1732,7 @@
         },
         {
           "id": "8.5",
+          "slug": "reduce",
           "title": "reduce",
           "groups": [
             {
@@ -1710,6 +1765,7 @@
         },
         {
           "id": "8.6",
+          "slug": "map-and-set",
           "title": "Map and Set",
           "groups": [
             {
@@ -1751,6 +1807,7 @@
     },
     {
       "id": "9",
+      "slug": "asynchronous-javascript-and-event-loop",
       "title": "Asynchronous JavaScript and Event Loop",
       "importance": [
         "Frontend applications depend on timers, events, network requests, promises, rendering, and user interactions."
@@ -1758,6 +1815,7 @@
       "subtopics": [
         {
           "id": "9.1",
+          "slug": "synchronous-execution",
           "title": "Synchronous Execution",
           "groups": [
             {
@@ -1774,6 +1832,7 @@
         },
         {
           "id": "9.2",
+          "slug": "browser-apis",
           "title": "Browser APIs",
           "groups": [
             {
@@ -1803,6 +1862,7 @@
         },
         {
           "id": "9.3",
+          "slug": "task-queue",
           "title": "Task Queue",
           "groups": [
             {
@@ -1829,6 +1889,7 @@
         },
         {
           "id": "9.4",
+          "slug": "microtask-queue",
           "title": "Microtask Queue",
           "groups": [
             {
@@ -1855,6 +1916,7 @@
         },
         {
           "id": "9.5",
+          "slug": "rendering-opportunity",
           "title": "Rendering Opportunity",
           "groups": [
             {
@@ -1881,6 +1943,7 @@
         },
         {
           "id": "9.6",
+          "slug": "timers",
           "title": "Timers",
           "groups": [
             {
@@ -1898,6 +1961,7 @@
         },
         {
           "id": "9.7",
+          "slug": "promise-execution-order",
           "title": "Promise Execution Order",
           "groups": [
             {
@@ -1928,6 +1992,7 @@
     },
     {
       "id": "10",
+      "slug": "promises-async-await-and-request-control",
       "title": "Promises, Async/Await, and Request Control",
       "importance": [
         "Reliable asynchronous architecture requires more than writing await. You need error handling, cancellation, concurrency control, deduplication, and race-condition management."
@@ -1935,6 +2000,7 @@
       "subtopics": [
         {
           "id": "10.1",
+          "slug": "promise-states",
           "title": "Promise States",
           "groups": [
             {
@@ -1961,6 +2027,7 @@
         },
         {
           "id": "10.2",
+          "slug": "promise-chaining",
           "title": "Promise Chaining",
           "groups": [
             {
@@ -1978,6 +2045,7 @@
         },
         {
           "id": "10.3",
+          "slug": "error-propagation",
           "title": "Error Propagation",
           "groups": [
             {
@@ -1995,6 +2063,7 @@
         },
         {
           "id": "10.4",
+          "slug": "async-functions",
           "title": "Async Functions",
           "groups": [
             {
@@ -2011,6 +2080,7 @@
         },
         {
           "id": "10.5",
+          "slug": "await",
           "title": "Await",
           "groups": [
             {
@@ -2044,6 +2114,7 @@
         },
         {
           "id": "10.6",
+          "slug": "promise-combinators",
           "title": "Promise Combinators",
           "groups": [
             {
@@ -2094,6 +2165,7 @@
         },
         {
           "id": "10.7",
+          "slug": "request-cancellation",
           "title": "Request Cancellation",
           "groups": [
             {
@@ -2123,6 +2195,7 @@
         },
         {
           "id": "10.8",
+          "slug": "race-conditions",
           "title": "Race Conditions",
           "groups": [
             {
@@ -2152,6 +2225,7 @@
         },
         {
           "id": "10.9",
+          "slug": "retry",
           "title": "Retry",
           "groups": [
             {
@@ -2189,6 +2263,7 @@
         },
         {
           "id": "10.10",
+          "slug": "concurrency-limiting",
           "title": "Concurrency Limiting",
           "groups": [
             {
@@ -2217,6 +2292,7 @@
     },
     {
       "id": "11",
+      "slug": "browser-architecture",
       "title": "Browser Architecture",
       "importance": [
         "Understanding browser internals helps explain rendering performance, memory behavior, security boundaries, workers, and UI responsiveness."
@@ -2224,6 +2300,7 @@
       "subtopics": [
         {
           "id": "11.1",
+          "slug": "browser-processes",
           "title": "Browser Processes",
           "groups": [
             {
@@ -2253,6 +2330,7 @@
         },
         {
           "id": "11.2",
+          "slug": "main-thread",
           "title": "Main Thread",
           "groups": [
             {
@@ -2282,6 +2360,7 @@
         },
         {
           "id": "11.3",
+          "slug": "web-workers",
           "title": "Web Workers",
           "groups": [
             {
@@ -2312,6 +2391,7 @@
         },
         {
           "id": "11.4",
+          "slug": "site-isolation-and-sandboxing",
           "title": "Site Isolation and Sandboxing",
           "groups": [
             {
@@ -2331,6 +2411,7 @@
     },
     {
       "id": "12",
+      "slug": "browser-rendering-pipeline",
       "title": "Browser Rendering Pipeline",
       "importance": [
         "Rendering knowledge helps optimize animations, layouts, large pages, responsive interfaces, and interaction performance."
@@ -2338,6 +2419,7 @@
       "subtopics": [
         {
           "id": "12.1",
+          "slug": "dom-construction",
           "title": "DOM Construction",
           "groups": [
             {
@@ -2355,6 +2437,7 @@
         },
         {
           "id": "12.2",
+          "slug": "cssom-construction",
           "title": "CSSOM Construction",
           "groups": [
             {
@@ -2372,6 +2455,7 @@
         },
         {
           "id": "12.3",
+          "slug": "render-tree",
           "title": "Render Tree",
           "groups": [
             {
@@ -2388,6 +2472,7 @@
         },
         {
           "id": "12.4",
+          "slug": "style-calculation",
           "title": "Style Calculation",
           "groups": [
             {
@@ -2419,6 +2504,7 @@
         },
         {
           "id": "12.5",
+          "slug": "layout",
           "title": "Layout",
           "groups": [
             {
@@ -2453,6 +2539,7 @@
         },
         {
           "id": "12.6",
+          "slug": "paint",
           "title": "Paint",
           "groups": [
             {
@@ -2485,6 +2572,7 @@
         },
         {
           "id": "12.7",
+          "slug": "compositing",
           "title": "Compositing",
           "groups": [
             {
@@ -2502,6 +2590,7 @@
         },
         {
           "id": "12.8",
+          "slug": "layout-thrashing",
           "title": "Layout Thrashing",
           "groups": [
             {
@@ -2534,6 +2623,7 @@
     },
     {
       "id": "13",
+      "slug": "networking-fundamentals",
       "title": "Networking Fundamentals",
       "importance": [
         "Frontend engineers need to understand what happens between the browser, CDN, load balancer, API gateway, BFF, and backend services."
@@ -2541,6 +2631,7 @@
       "subtopics": [
         {
           "id": "13.1",
+          "slug": "url-processing",
           "title": "URL Processing",
           "groups": [
             {
@@ -2571,6 +2662,7 @@
         },
         {
           "id": "13.2",
+          "slug": "dns",
           "title": "DNS",
           "groups": [
             {
@@ -2588,6 +2680,7 @@
         },
         {
           "id": "13.3",
+          "slug": "tcp",
           "title": "TCP",
           "groups": [
             {
@@ -2605,6 +2698,7 @@
         },
         {
           "id": "13.4",
+          "slug": "tls-and-https",
           "title": "TLS and HTTPS",
           "groups": [
             {
@@ -2643,6 +2737,7 @@
         },
         {
           "id": "13.5",
+          "slug": "http-methods",
           "title": "HTTP Methods",
           "groups": [
             {
@@ -2676,6 +2771,7 @@
         },
         {
           "id": "13.6",
+          "slug": "idempotency",
           "title": "Idempotency",
           "groups": [
             {
@@ -2709,6 +2805,7 @@
         },
         {
           "id": "13.7",
+          "slug": "status-codes",
           "title": "Status Codes",
           "groups": [
             {
@@ -2756,6 +2853,7 @@
         },
         {
           "id": "13.8",
+          "slug": "http-headers",
           "title": "HTTP Headers",
           "groups": [
             {
@@ -2798,6 +2896,7 @@
         },
         {
           "id": "13.9",
+          "slug": "http-2-and-http-3-concepts",
           "title": "HTTP/2 and HTTP/3 Concepts",
           "groups": [
             {
@@ -2840,6 +2939,7 @@
     },
     {
       "id": "14",
+      "slug": "browser-caching",
       "title": "Browser Caching",
       "importance": [
         "Correct caching improves loading speed, reduces backend traffic, and creates more responsive interfaces."
@@ -2847,6 +2947,7 @@
       "subtopics": [
         {
           "id": "14.1",
+          "slug": "cache-layers",
           "title": "Cache Layers",
           "groups": [
             {
@@ -2875,6 +2976,7 @@
         },
         {
           "id": "14.2",
+          "slug": "cache-control",
           "title": "Cache-Control",
           "groups": [
             {
@@ -2906,6 +3008,7 @@
         },
         {
           "id": "14.3",
+          "slug": "validation-headers",
           "title": "Validation Headers",
           "groups": [
             {
@@ -2939,6 +3042,7 @@
         },
         {
           "id": "14.4",
+          "slug": "static-asset-strategy",
           "title": "Static Asset Strategy",
           "groups": [
             {
@@ -2961,6 +3065,7 @@
         },
         {
           "id": "14.5",
+          "slug": "html-caching-strategy",
           "title": "HTML Caching Strategy",
           "groups": [
             {
@@ -2982,6 +3087,7 @@
     },
     {
       "id": "15",
+      "slug": "storage-cookies-and-client-persistence",
       "title": "Storage, Cookies, and Client Persistence",
       "importance": [
         "Storage decisions affect authentication, security, performance, offline behavior, and multi-tab coordination."
@@ -2989,6 +3095,7 @@
       "subtopics": [
         {
           "id": "15.1",
+          "slug": "cookies",
           "title": "Cookies",
           "groups": [
             {
@@ -3050,6 +3157,7 @@
         },
         {
           "id": "15.2",
+          "slug": "local-storage",
           "title": "Local Storage",
           "groups": [
             {
@@ -3069,6 +3177,7 @@
         },
         {
           "id": "15.3",
+          "slug": "session-storage",
           "title": "Session Storage",
           "groups": [
             {
@@ -3086,6 +3195,7 @@
         },
         {
           "id": "15.4",
+          "slug": "indexeddb",
           "title": "IndexedDB",
           "groups": [
             {
@@ -3105,6 +3215,7 @@
         },
         {
           "id": "15.5",
+          "slug": "cache-storage",
           "title": "Cache Storage",
           "groups": [
             {
@@ -3122,6 +3233,7 @@
         },
         {
           "id": "15.6",
+          "slug": "multi-tab-synchronization",
           "title": "Multi-Tab Synchronization",
           "groups": [
             {
@@ -3153,6 +3265,7 @@
     },
     {
       "id": "16",
+      "slug": "same-origin-policy-and-cors",
       "title": "Same-Origin Policy and CORS",
       "importance": [
         "This topic is essential for applications running on different domains, subdomains, ports, and backend environments."
@@ -3160,6 +3273,7 @@
       "subtopics": [
         {
           "id": "16.1",
+          "slug": "origin",
           "title": "Origin",
           "groups": [
             {
@@ -3181,6 +3295,7 @@
         },
         {
           "id": "16.2",
+          "slug": "same-origin-policy",
           "title": "Same-Origin Policy",
           "groups": [
             {
@@ -3199,6 +3314,7 @@
         },
         {
           "id": "16.3",
+          "slug": "simple-cors-request",
           "title": "Simple CORS Request",
           "groups": [
             {
@@ -3225,6 +3341,7 @@
         },
         {
           "id": "16.4",
+          "slug": "preflight-request",
           "title": "Preflight Request",
           "groups": [
             {
@@ -3242,6 +3359,7 @@
         },
         {
           "id": "16.5",
+          "slug": "credentials",
           "title": "Credentials",
           "groups": [
             {
@@ -3275,6 +3393,7 @@
         },
         {
           "id": "16.6",
+          "slug": "common-cors-failures",
           "title": "Common CORS Failures",
           "groups": [
             {
@@ -3298,6 +3417,7 @@
     },
     {
       "id": "17",
+      "slug": "html-fundamentals-and-semantics",
       "title": "HTML Fundamentals and Semantics",
       "importance": [
         "HTML provides structure, accessibility, browser behavior, SEO signals, and native interaction."
@@ -3305,6 +3425,7 @@
       "subtopics": [
         {
           "id": "17.1",
+          "slug": "document-structure",
           "title": "Document Structure",
           "groups": [
             {
@@ -3336,6 +3457,7 @@
         },
         {
           "id": "17.2",
+          "slug": "semantic-elements",
           "title": "Semantic Elements",
           "groups": [
             {
@@ -3366,6 +3488,7 @@
         },
         {
           "id": "17.3",
+          "slug": "headings",
           "title": "Headings",
           "groups": [
             {
@@ -3383,6 +3506,7 @@
         },
         {
           "id": "17.4",
+          "slug": "buttons-versus-links",
           "title": "Buttons Versus Links",
           "groups": [
             {
@@ -3422,6 +3546,7 @@
         },
         {
           "id": "17.5",
+          "slug": "forms",
           "title": "Forms",
           "groups": [
             {
@@ -3456,6 +3581,7 @@
         },
         {
           "id": "17.6",
+          "slug": "tables",
           "title": "Tables",
           "groups": [
             {
@@ -3487,6 +3613,7 @@
         },
         {
           "id": "17.7",
+          "slug": "dialogs",
           "title": "Dialogs",
           "groups": [
             {
@@ -3511,6 +3638,7 @@
     },
     {
       "id": "18",
+      "slug": "accessibility",
       "title": "Accessibility",
       "importance": [
         "Accessibility is part of software correctness. An interface that excludes keyboard or assistive-technology users is incomplete."
@@ -3518,6 +3646,7 @@
       "subtopics": [
         {
           "id": "18.1",
+          "slug": "wcag-principles",
           "title": "WCAG Principles",
           "groups": [
             {
@@ -3556,6 +3685,7 @@
         },
         {
           "id": "18.2",
+          "slug": "keyboard-navigation",
           "title": "Keyboard Navigation",
           "groups": [
             {
@@ -3574,6 +3704,7 @@
         },
         {
           "id": "18.3",
+          "slug": "focus-management",
           "title": "Focus Management",
           "groups": [
             {
@@ -3604,6 +3735,7 @@
         },
         {
           "id": "18.4",
+          "slug": "aria",
           "title": "ARIA",
           "groups": [
             {
@@ -3621,6 +3753,7 @@
         },
         {
           "id": "18.5",
+          "slug": "live-regions",
           "title": "Live Regions",
           "groups": [
             {
@@ -3648,6 +3781,7 @@
         },
         {
           "id": "18.6",
+          "slug": "colour-contrast",
           "title": "Colour Contrast",
           "groups": [
             {
@@ -3666,6 +3800,7 @@
         },
         {
           "id": "18.7",
+          "slug": "reduced-motion",
           "title": "Reduced Motion",
           "groups": [
             {
@@ -3691,6 +3826,7 @@
     },
     {
       "id": "19",
+      "slug": "css-fundamentals",
       "title": "CSS Fundamentals",
       "importance": [
         "CSS mastery requires understanding layout rules, the cascade, sizing, stacking, and rendering—not just memorizing properties."
@@ -3698,6 +3834,7 @@
       "subtopics": [
         {
           "id": "19.1",
+          "slug": "cascade",
           "title": "Cascade",
           "groups": [
             {
@@ -3726,6 +3863,7 @@
         },
         {
           "id": "19.2",
+          "slug": "specificity",
           "title": "Specificity",
           "groups": [
             {
@@ -3753,6 +3891,7 @@
         },
         {
           "id": "19.3",
+          "slug": "inheritance",
           "title": "Inheritance",
           "groups": [
             {
@@ -3784,6 +3923,7 @@
         },
         {
           "id": "19.4",
+          "slug": "box-model",
           "title": "Box Model",
           "groups": [
             {
@@ -3812,6 +3952,7 @@
         },
         {
           "id": "19.5",
+          "slug": "display-types",
           "title": "Display Types",
           "groups": [
             {
@@ -3845,6 +3986,7 @@
         },
         {
           "id": "19.6",
+          "slug": "positioning",
           "title": "Positioning",
           "groups": [
             {
@@ -3874,6 +4016,7 @@
         },
         {
           "id": "19.7",
+          "slug": "stacking-context",
           "title": "Stacking Context",
           "groups": [
             {
@@ -3904,6 +4047,7 @@
     },
     {
       "id": "20",
+      "slug": "flexbox",
       "title": "Flexbox",
       "importance": [
         "Flexbox is the primary one-dimensional layout system for rows, columns, alignment, and distributing available space."
@@ -3911,6 +4055,7 @@
       "subtopics": [
         {
           "id": "20.1",
+          "slug": "main-and-cross-axis",
           "title": "Main and Cross Axis",
           "groups": [
             {
@@ -3928,6 +4073,7 @@
         },
         {
           "id": "20.2",
+          "slug": "flex-sizing",
           "title": "Flex Sizing",
           "groups": [
             {
@@ -3956,6 +4102,7 @@
         },
         {
           "id": "20.3",
+          "slug": "alignment",
           "title": "Alignment",
           "groups": [
             {
@@ -3982,6 +4129,7 @@
         },
         {
           "id": "20.4",
+          "slug": "wrapping",
           "title": "Wrapping",
           "groups": [
             {
@@ -4000,6 +4148,7 @@
     },
     {
       "id": "21",
+      "slug": "css-grid",
       "title": "CSS Grid",
       "importance": [
         "Grid is designed for two-dimensional layouts where rows and columns need coordinated control."
@@ -4007,6 +4156,7 @@
       "subtopics": [
         {
           "id": "21.1",
+          "slug": "grid-container",
           "title": "Grid Container",
           "groups": [
             {
@@ -4026,6 +4176,7 @@
         },
         {
           "id": "21.2",
+          "slug": "grid-sizing",
           "title": "Grid Sizing",
           "groups": [
             {
@@ -4057,6 +4208,7 @@
         },
         {
           "id": "21.3",
+          "slug": "placement",
           "title": "Placement",
           "groups": [
             {
@@ -4083,6 +4235,7 @@
         },
         {
           "id": "21.4",
+          "slug": "subgrid",
           "title": "Subgrid",
           "groups": [
             {
@@ -4101,6 +4254,7 @@
     },
     {
       "id": "22",
+      "slug": "responsive-design",
       "title": "Responsive Design",
       "importance": [
         "Responsive design must account for screen size, container size, input method, content size, and user preferences."
@@ -4108,6 +4262,7 @@
       "subtopics": [
         {
           "id": "22.1",
+          "slug": "mobile-first-design",
           "title": "Mobile-First Design",
           "groups": [
             {
@@ -4125,6 +4280,7 @@
         },
         {
           "id": "22.2",
+          "slug": "media-queries",
           "title": "Media Queries",
           "groups": [
             {
@@ -4154,6 +4310,7 @@
         },
         {
           "id": "22.3",
+          "slug": "container-queries",
           "title": "Container Queries",
           "groups": [
             {
@@ -4171,6 +4328,7 @@
         },
         {
           "id": "22.4",
+          "slug": "responsive-units",
           "title": "Responsive Units",
           "groups": [
             {
@@ -4204,6 +4362,7 @@
         },
         {
           "id": "22.5",
+          "slug": "responsive-images",
           "title": "Responsive Images",
           "groups": [
             {
@@ -4234,6 +4393,7 @@
     },
     {
       "id": "23",
+      "slug": "css-architecture-and-design-tokens",
       "title": "CSS Architecture and Design Tokens",
       "importance": [
         "Large applications need predictable styling, theming, component ownership, and reusable design decisions."
@@ -4241,6 +4401,7 @@
       "subtopics": [
         {
           "id": "23.1",
+          "slug": "styling-approaches",
           "title": "Styling Approaches",
           "groups": [
             {
@@ -4277,6 +4438,7 @@
         },
         {
           "id": "23.2",
+          "slug": "design-tokens",
           "title": "Design Tokens",
           "groups": [
             {
@@ -4317,6 +4479,7 @@
         },
         {
           "id": "23.3",
+          "slug": "theming",
           "title": "Theming",
           "groups": [
             {
@@ -4337,6 +4500,7 @@
     },
     {
       "id": "24",
+      "slug": "typescript-fundamentals",
       "title": "TypeScript Fundamentals",
       "importance": [
         "TypeScript improves correctness, refactoring, API clarity, and developer tooling, but only when its type model is properly understood."
@@ -4344,6 +4508,7 @@
       "subtopics": [
         {
           "id": "24.1",
+          "slug": "compile-time-versus-runtime",
           "title": "Compile-Time Versus Runtime",
           "groups": [
             {
@@ -4361,6 +4526,7 @@
         },
         {
           "id": "24.2",
+          "slug": "type-inference",
           "title": "Type Inference",
           "groups": [
             {
@@ -4378,6 +4544,7 @@
         },
         {
           "id": "24.3",
+          "slug": "structural-typing",
           "title": "Structural Typing",
           "groups": [
             {
@@ -4395,6 +4562,7 @@
         },
         {
           "id": "24.4",
+          "slug": "any-unknown-and-never",
           "title": "any, unknown, and never",
           "groups": [
             {
@@ -4432,6 +4600,7 @@
         },
         {
           "id": "24.5",
+          "slug": "union-types",
           "title": "Union Types",
           "groups": [
             {
@@ -4458,6 +4627,7 @@
         },
         {
           "id": "24.6",
+          "slug": "intersection-types",
           "title": "Intersection Types",
           "groups": [
             {
@@ -4484,6 +4654,7 @@
     },
     {
       "id": "25",
+      "slug": "type-narrowing-and-domain-modeling",
       "title": "Type Narrowing and Domain Modeling",
       "importance": [
         "Narrowing allows TypeScript to safely determine which member of a union is being used."
@@ -4491,6 +4662,7 @@
       "subtopics": [
         {
           "id": "25.1",
+          "slug": "built-in-narrowing",
           "title": "Built-in Narrowing",
           "groups": [
             {
@@ -4517,6 +4689,7 @@
         },
         {
           "id": "25.2",
+          "slug": "discriminated-unions",
           "title": "Discriminated Unions",
           "groups": [
             {
@@ -4541,6 +4714,7 @@
         },
         {
           "id": "25.3",
+          "slug": "exhaustiveness-checking",
           "title": "Exhaustiveness Checking",
           "groups": [
             {
@@ -4563,6 +4737,7 @@
         },
         {
           "id": "25.4",
+          "slug": "user-defined-type-guards",
           "title": "User-Defined Type Guards",
           "groups": [
             {
@@ -4587,6 +4762,7 @@
     },
     {
       "id": "26",
+      "slug": "typescript-generics",
       "title": "TypeScript Generics",
       "importance": [
         "Generics preserve relationships between inputs and outputs while supporting reusable abstractions."
@@ -4594,6 +4770,7 @@
       "subtopics": [
         {
           "id": "26.1",
+          "slug": "generic-functions",
           "title": "Generic Functions",
           "groups": [
             {
@@ -4618,6 +4795,7 @@
         },
         {
           "id": "26.2",
+          "slug": "generic-constraints",
           "title": "Generic Constraints",
           "groups": [
             {
@@ -4640,6 +4818,7 @@
         },
         {
           "id": "26.3",
+          "slug": "keyof",
           "title": "keyof",
           "groups": [
             {
@@ -4664,6 +4843,7 @@
         },
         {
           "id": "26.4",
+          "slug": "generic-components",
           "title": "Generic Components",
           "groups": [
             {
@@ -4695,6 +4875,7 @@
     },
     {
       "id": "27",
+      "slug": "advanced-typescript",
       "title": "Advanced TypeScript",
       "importance": [
         "Advanced types help model libraries, domain APIs, reusable components, and strongly typed configuration."
@@ -4702,6 +4883,7 @@
       "subtopics": [
         {
           "id": "27.1",
+          "slug": "mapped-types",
           "title": "Mapped Types",
           "groups": [
             {
@@ -4727,6 +4909,7 @@
         },
         {
           "id": "27.2",
+          "slug": "conditional-types",
           "title": "Conditional Types",
           "groups": [
             {
@@ -4751,6 +4934,7 @@
         },
         {
           "id": "27.3",
+          "slug": "infer",
           "title": "infer",
           "groups": [
             {
@@ -4773,6 +4957,7 @@
         },
         {
           "id": "27.4",
+          "slug": "template-literal-types",
           "title": "Template Literal Types",
           "groups": [
             {
@@ -4798,6 +4983,7 @@
         },
         {
           "id": "27.5",
+          "slug": "branded-types",
           "title": "Branded Types",
           "groups": [
             {
@@ -4820,6 +5006,7 @@
         },
         {
           "id": "27.6",
+          "slug": "recursive-types",
           "title": "Recursive Types",
           "groups": [
             {
@@ -4850,6 +5037,7 @@
     },
     {
       "id": "28",
+      "slug": "runtime-validation-and-api-contracts",
       "title": "Runtime Validation and API Contracts",
       "importance": [
         "TypeScript interfaces do not prove that server data is valid."
@@ -4857,6 +5045,7 @@
       "subtopics": [
         {
           "id": "28.1",
+          "slug": "trust-boundaries",
           "title": "Trust Boundaries",
           "groups": [
             {
@@ -4879,6 +5068,7 @@
         },
         {
           "id": "28.2",
+          "slug": "parsing-versus-casting",
           "title": "Parsing Versus Casting",
           "groups": [
             {
@@ -4906,6 +5096,7 @@
         },
         {
           "id": "28.3",
+          "slug": "dto-and-domain-model-separation",
           "title": "DTO and Domain Model Separation",
           "groups": [
             {
@@ -4943,6 +5134,7 @@
         },
         {
           "id": "28.4",
+          "slug": "contract-synchronization",
           "title": "Contract Synchronization",
           "groups": [
             {
@@ -4973,6 +5165,7 @@
     },
     {
       "id": "29",
+      "slug": "react-mental-model",
       "title": "React Mental Model",
       "importance": [
         "React should be understood as a rendering and state coordination model, not merely a collection of hooks."
@@ -4980,6 +5173,7 @@
       "subtopics": [
         {
           "id": "29.1",
+          "slug": "components",
           "title": "Components",
           "groups": [
             {
@@ -4998,6 +5192,7 @@
         },
         {
           "id": "29.2",
+          "slug": "react-elements",
           "title": "React Elements",
           "groups": [
             {
@@ -5015,6 +5210,7 @@
         },
         {
           "id": "29.3",
+          "slug": "render-phase",
           "title": "Render Phase",
           "groups": [
             {
@@ -5042,6 +5238,7 @@
         },
         {
           "id": "29.4",
+          "slug": "commit-phase",
           "title": "Commit Phase",
           "groups": [
             {
@@ -5062,6 +5259,7 @@
         },
         {
           "id": "29.5",
+          "slug": "reconciliation",
           "title": "Reconciliation",
           "groups": [
             {
@@ -5090,6 +5288,7 @@
         },
         {
           "id": "29.6",
+          "slug": "keys",
           "title": "Keys",
           "groups": [
             {
@@ -5126,6 +5325,7 @@
     },
     {
       "id": "30",
+      "slug": "react-state",
       "title": "React State",
       "importance": [
         "Correct state design prevents synchronization bugs, unnecessary rendering, and unclear ownership."
@@ -5133,6 +5333,7 @@
       "subtopics": [
         {
           "id": "30.1",
+          "slug": "state-ownership",
           "title": "State Ownership",
           "groups": [
             {
@@ -5160,6 +5361,7 @@
         },
         {
           "id": "30.2",
+          "slug": "minimal-state",
           "title": "Minimal State",
           "groups": [
             {
@@ -5179,6 +5381,7 @@
         },
         {
           "id": "30.3",
+          "slug": "state-updates",
           "title": "State Updates",
           "groups": [
             {
@@ -5198,6 +5401,7 @@
         },
         {
           "id": "30.4",
+          "slug": "immutable-updates",
           "title": "Immutable Updates",
           "groups": [
             {
@@ -5217,6 +5421,7 @@
         },
         {
           "id": "30.5",
+          "slug": "controlled-and-uncontrolled-state",
           "title": "Controlled and Uncontrolled State",
           "groups": [
             {
@@ -5250,6 +5455,7 @@
         },
         {
           "id": "30.6",
+          "slug": "state-machines",
           "title": "State Machines",
           "groups": [
             {
@@ -5282,6 +5488,7 @@
     },
     {
       "id": "31",
+      "slug": "react-hooks",
       "title": "React Hooks",
       "importance": [
         "Hooks connect component rendering with state, references, context, memoization, and external systems."
@@ -5289,6 +5496,7 @@
       "subtopics": [
         {
           "id": "31.1",
+          "slug": "rules-of-hooks",
           "title": "Rules of Hooks",
           "groups": [
             {
@@ -5313,6 +5521,7 @@
         },
         {
           "id": "31.2",
+          "slug": "usestate",
           "title": "useState",
           "groups": [
             {
@@ -5339,6 +5548,7 @@
         },
         {
           "id": "31.3",
+          "slug": "usereducer",
           "title": "useReducer",
           "groups": [
             {
@@ -5366,6 +5576,7 @@
         },
         {
           "id": "31.4",
+          "slug": "useref",
           "title": "useRef",
           "groups": [
             {
@@ -5395,6 +5606,7 @@
         },
         {
           "id": "31.5",
+          "slug": "usememo",
           "title": "useMemo",
           "groups": [
             {
@@ -5427,6 +5639,7 @@
         },
         {
           "id": "31.6",
+          "slug": "usecallback",
           "title": "useCallback",
           "groups": [
             {
@@ -5459,6 +5672,7 @@
         },
         {
           "id": "31.7",
+          "slug": "custom-hooks",
           "title": "Custom Hooks",
           "groups": [
             {
@@ -5489,6 +5703,7 @@
     },
     {
       "id": "32",
+      "slug": "react-effects",
       "title": "React Effects",
       "importance": [
         "Effects are one of the most misunderstood parts of React. They should synchronize with external systems, not replace normal rendering logic."
@@ -5496,6 +5711,7 @@
       "subtopics": [
         {
           "id": "32.1",
+          "slug": "correct-effect-use-cases",
           "title": "Correct Effect Use Cases",
           "groups": [
             {
@@ -5518,6 +5734,7 @@
         },
         {
           "id": "32.2",
+          "slug": "incorrect-effect-use-cases",
           "title": "Incorrect Effect Use Cases",
           "groups": [
             {
@@ -5538,6 +5755,7 @@
         },
         {
           "id": "32.3",
+          "slug": "dependency-arrays",
           "title": "Dependency Arrays",
           "groups": [
             {
@@ -5566,6 +5784,7 @@
         },
         {
           "id": "32.4",
+          "slug": "cleanup",
           "title": "Cleanup",
           "groups": [
             {
@@ -5593,6 +5812,7 @@
         },
         {
           "id": "32.5",
+          "slug": "effect-race-conditions",
           "title": "Effect Race Conditions",
           "groups": [
             {
@@ -5618,6 +5838,7 @@
         },
         {
           "id": "32.6",
+          "slug": "strict-mode-development-behavior",
           "title": "Strict Mode Development Behavior",
           "groups": [
             {
@@ -5646,6 +5867,7 @@
     },
     {
       "id": "33",
+      "slug": "react-context",
       "title": "React Context",
       "importance": [
         "Context distributes values through a component tree without manually passing props through every layer."
@@ -5653,6 +5875,7 @@
       "subtopics": [
         {
           "id": "33.1",
+          "slug": "good-context-use-cases",
           "title": "Good Context Use Cases",
           "groups": [
             {
@@ -5672,6 +5895,7 @@
         },
         {
           "id": "33.2",
+          "slug": "context-rerender-behavior",
           "title": "Context Rerender Behavior",
           "groups": [
             {
@@ -5697,6 +5921,7 @@
         },
         {
           "id": "33.3",
+          "slug": "context-design",
           "title": "Context Design",
           "groups": [
             {
@@ -5726,6 +5951,7 @@
     },
     {
       "id": "34",
+      "slug": "react-forms",
       "title": "React Forms",
       "importance": [
         "Forms contain complicated combinations of state, validation, accessibility, server errors, dynamic fields, and submission behavior."
@@ -5733,6 +5959,7 @@
       "subtopics": [
         {
           "id": "34.1",
+          "slug": "form-state-categories",
           "title": "Form State Categories",
           "groups": [
             {
@@ -5755,6 +5982,7 @@
         },
         {
           "id": "34.2",
+          "slug": "validation",
           "title": "Validation",
           "groups": [
             {
@@ -5784,6 +6012,7 @@
         },
         {
           "id": "34.3",
+          "slug": "submission",
           "title": "Submission",
           "groups": [
             {
@@ -5803,6 +6032,7 @@
         },
         {
           "id": "34.4",
+          "slug": "dynamic-forms",
           "title": "Dynamic Forms",
           "groups": [
             {
@@ -5823,6 +6053,7 @@
     },
     {
       "id": "35",
+      "slug": "react-error-handling",
       "title": "React Error Handling",
       "importance": [
         "Failure isolation prevents a small UI problem from breaking the entire application."
@@ -5830,6 +6061,7 @@
       "subtopics": [
         {
           "id": "35.1",
+          "slug": "error-boundaries",
           "title": "Error Boundaries",
           "groups": [
             {
@@ -5857,6 +6089,7 @@
         },
         {
           "id": "35.2",
+          "slug": "boundary-placement",
           "title": "Boundary Placement",
           "groups": [
             {
@@ -5886,6 +6119,7 @@
         },
         {
           "id": "35.3",
+          "slug": "recovery-ui",
           "title": "Recovery UI",
           "groups": [
             {
@@ -5909,6 +6143,7 @@
     },
     {
       "id": "36",
+      "slug": "react-concurrency-and-suspense-concepts",
       "title": "React Concurrency and Suspense Concepts",
       "importance": [
         "Modern React can prioritize work and coordinate loading boundaries to keep interfaces responsive."
@@ -5916,6 +6151,7 @@
       "subtopics": [
         {
           "id": "36.1",
+          "slug": "urgent-and-non-urgent-updates",
           "title": "Urgent and Non-Urgent Updates",
           "groups": [
             {
@@ -5942,6 +6178,7 @@
         },
         {
           "id": "36.2",
+          "slug": "transitions",
           "title": "Transitions",
           "groups": [
             {
@@ -5970,6 +6207,7 @@
         },
         {
           "id": "36.3",
+          "slug": "deferred-values",
           "title": "Deferred Values",
           "groups": [
             {
@@ -5989,6 +6227,7 @@
         },
         {
           "id": "36.4",
+          "slug": "suspense-boundaries",
           "title": "Suspense Boundaries",
           "groups": [
             {
@@ -6011,6 +6250,7 @@
     },
     {
       "id": "37",
+      "slug": "frontend-state-classification",
       "title": "Frontend State Classification",
       "importance": [
         "The correct state solution depends on what kind of state is being managed."
@@ -6018,6 +6258,7 @@
       "subtopics": [
         {
           "id": "37.1",
+          "slug": "local-ui-state",
           "title": "Local UI State",
           "groups": [
             {
@@ -6040,6 +6281,7 @@
         },
         {
           "id": "37.2",
+          "slug": "shared-client-state",
           "title": "Shared Client State",
           "groups": [
             {
@@ -6064,6 +6306,7 @@
         },
         {
           "id": "37.3",
+          "slug": "server-state",
           "title": "Server State",
           "groups": [
             {
@@ -6092,6 +6335,7 @@
         },
         {
           "id": "37.4",
+          "slug": "url-state",
           "title": "URL State",
           "groups": [
             {
@@ -6124,6 +6368,7 @@
         },
         {
           "id": "37.5",
+          "slug": "persistent-state",
           "title": "Persistent State",
           "groups": [
             {
@@ -6160,6 +6405,7 @@
     },
     {
       "id": "38",
+      "slug": "redux-and-redux-toolkit",
       "title": "Redux and Redux Toolkit",
       "importance": [
         "Redux is useful for predictable shared state, complex domain transitions, debugging, middleware, and coordinated updates."
@@ -6167,6 +6413,7 @@
       "subtopics": [
         {
           "id": "38.1",
+          "slug": "store",
           "title": "Store",
           "groups": [
             {
@@ -6184,6 +6431,7 @@
         },
         {
           "id": "38.2",
+          "slug": "actions",
           "title": "Actions",
           "groups": [
             {
@@ -6214,6 +6462,7 @@
         },
         {
           "id": "38.3",
+          "slug": "reducers",
           "title": "Reducers",
           "groups": [
             {
@@ -6232,6 +6481,7 @@
         },
         {
           "id": "38.4",
+          "slug": "selectors",
           "title": "Selectors",
           "groups": [
             {
@@ -6252,6 +6502,7 @@
         },
         {
           "id": "38.5",
+          "slug": "normalized-state",
           "title": "Normalized State",
           "groups": [
             {
@@ -6281,6 +6532,7 @@
         },
         {
           "id": "38.6",
+          "slug": "middleware",
           "title": "Middleware",
           "groups": [
             {
@@ -6311,6 +6563,7 @@
     },
     {
       "id": "39",
+      "slug": "server-state-management",
       "title": "Server-State Management",
       "importance": [
         "Server state requires caching, freshness rules, deduplication, invalidation, mutation coordination, and background synchronization."
@@ -6318,6 +6571,7 @@
       "subtopics": [
         {
           "id": "39.1",
+          "slug": "query-keys",
           "title": "Query Keys",
           "groups": [
             {
@@ -6346,6 +6600,7 @@
         },
         {
           "id": "39.2",
+          "slug": "freshness-and-staleness",
           "title": "Freshness and Staleness",
           "groups": [
             {
@@ -6366,6 +6621,7 @@
         },
         {
           "id": "39.3",
+          "slug": "query-deduplication",
           "title": "Query Deduplication",
           "groups": [
             {
@@ -6380,6 +6636,7 @@
         },
         {
           "id": "39.4",
+          "slug": "mutations",
           "title": "Mutations",
           "groups": [
             {
@@ -6402,6 +6659,7 @@
         },
         {
           "id": "39.5",
+          "slug": "optimistic-updates",
           "title": "Optimistic Updates",
           "groups": [
             {
@@ -6435,6 +6693,7 @@
         },
         {
           "id": "39.6",
+          "slug": "pagination",
           "title": "Pagination",
           "groups": [
             {
@@ -6455,6 +6714,7 @@
         },
         {
           "id": "39.7",
+          "slug": "infinite-queries",
           "title": "Infinite Queries",
           "groups": [
             {
@@ -6477,6 +6737,7 @@
     },
     {
       "id": "40",
+      "slug": "api-client-architecture",
       "title": "API Client Architecture",
       "importance": [
         "A centralized API architecture prevents inconsistent request behavior, duplicated error handling, and tight coupling between components and backend transport."
@@ -6484,6 +6745,7 @@
       "subtopics": [
         {
           "id": "40.1",
+          "slug": "base-client",
           "title": "Base Client",
           "groups": [
             {
@@ -6507,6 +6769,7 @@
         },
         {
           "id": "40.2",
+          "slug": "api-modules",
           "title": "API Modules",
           "groups": [
             {
@@ -6533,6 +6796,7 @@
         },
         {
           "id": "40.3",
+          "slug": "error-taxonomy",
           "title": "Error Taxonomy",
           "groups": [
             {
@@ -6564,6 +6828,7 @@
         },
         {
           "id": "40.4",
+          "slug": "interceptors",
           "title": "Interceptors",
           "groups": [
             {
@@ -6592,6 +6857,7 @@
         },
         {
           "id": "40.5",
+          "slug": "dto-mapping",
           "title": "DTO Mapping",
           "groups": [
             {
@@ -6615,6 +6881,7 @@
     },
     {
       "id": "41",
+      "slug": "authentication",
       "title": "Authentication",
       "importance": [
         "Authentication architecture affects security, routing, deep links, multi-tab behavior, refresh behavior, and every API request."
@@ -6622,6 +6889,7 @@
       "subtopics": [
         {
           "id": "41.1",
+          "slug": "authentication-versus-authorization",
           "title": "Authentication Versus Authorization",
           "groups": [
             {
@@ -6652,6 +6920,7 @@
         },
         {
           "id": "41.2",
+          "slug": "oauth-and-openid-connect-concepts",
           "title": "OAuth and OpenID Connect Concepts",
           "groups": [
             {
@@ -6693,6 +6962,7 @@
         },
         {
           "id": "41.3",
+          "slug": "authorization-code-flow-with-pkce",
           "title": "Authorization Code Flow with PKCE",
           "groups": [
             {
@@ -6723,6 +6993,7 @@
         },
         {
           "id": "41.4",
+          "slug": "spa-token-flow",
           "title": "SPA Token Flow",
           "groups": [
             {
@@ -6753,6 +7024,7 @@
         },
         {
           "id": "41.5",
+          "slug": "backend-session-or-bff-flow",
           "title": "Backend Session or BFF Flow",
           "groups": [
             {
@@ -6794,6 +7066,7 @@
         },
         {
           "id": "41.6",
+          "slug": "authentication-bootstrap",
           "title": "Authentication Bootstrap",
           "groups": [
             {
@@ -6822,6 +7095,7 @@
         },
         {
           "id": "41.7",
+          "slug": "authentication-states",
           "title": "Authentication States",
           "groups": [
             {
@@ -6858,6 +7132,7 @@
         },
         {
           "id": "41.8",
+          "slug": "deep-link-authentication",
           "title": "Deep-Link Authentication",
           "groups": [
             {
@@ -6889,6 +7164,7 @@
         },
         {
           "id": "41.9",
+          "slug": "multi-tab-authentication",
           "title": "Multi-Tab Authentication",
           "groups": [
             {
@@ -6919,6 +7195,7 @@
         },
         {
           "id": "41.10",
+          "slug": "session-expiry",
           "title": "Session Expiry",
           "groups": [
             {
@@ -6946,6 +7223,7 @@
         },
         {
           "id": "41.11",
+          "slug": "logout",
           "title": "Logout",
           "groups": [
             {
@@ -6980,6 +7258,7 @@
     },
     {
       "id": "42",
+      "slug": "authorization-and-permissions",
       "title": "Authorization and Permissions",
       "importance": [
         "Frontend authorization architecture should remain consistent, testable, and aligned with backend policy."
@@ -6987,6 +7266,7 @@
       "subtopics": [
         {
           "id": "42.1",
+          "slug": "roles",
           "title": "Roles",
           "groups": [
             {
@@ -7014,6 +7294,7 @@
         },
         {
           "id": "42.2",
+          "slug": "permission-based-checks",
           "title": "Permission-Based Checks",
           "groups": [
             {
@@ -7044,6 +7325,7 @@
         },
         {
           "id": "42.3",
+          "slug": "resource-level-authorization",
           "title": "Resource-Level Authorization",
           "groups": [
             {
@@ -7070,6 +7352,7 @@
         },
         {
           "id": "42.4",
+          "slug": "permission-loading",
           "title": "Permission Loading",
           "groups": [
             {
@@ -7098,6 +7381,7 @@
         },
         {
           "id": "42.5",
+          "slug": "route-guards",
           "title": "Route Guards",
           "groups": [
             {
@@ -7120,6 +7404,7 @@
     },
     {
       "id": "43",
+      "slug": "real-time-communication",
       "title": "Real-Time Communication",
       "importance": [
         "Applications may need background updates, workflow progress, notifications, collaboration, or live dashboards."
@@ -7127,6 +7412,7 @@
       "subtopics": [
         {
           "id": "43.1",
+          "slug": "polling",
           "title": "Polling",
           "groups": [
             {
@@ -7157,6 +7443,7 @@
         },
         {
           "id": "43.2",
+          "slug": "long-polling",
           "title": "Long Polling",
           "groups": [
             {
@@ -7174,6 +7461,7 @@
         },
         {
           "id": "43.3",
+          "slug": "server-sent-events",
           "title": "Server-Sent Events",
           "groups": [
             {
@@ -7201,6 +7489,7 @@
         },
         {
           "id": "43.4",
+          "slug": "websockets",
           "title": "WebSockets",
           "groups": [
             {
@@ -7231,6 +7520,7 @@
         },
         {
           "id": "43.5",
+          "slug": "reconnection",
           "title": "Reconnection",
           "groups": [
             {
@@ -7252,6 +7542,7 @@
         },
         {
           "id": "43.6",
+          "slug": "message-ordering-and-deduplication",
           "title": "Message Ordering and Deduplication",
           "groups": [
             {
@@ -7279,6 +7570,7 @@
     },
     {
       "id": "44",
+      "slug": "performance-engineering",
       "title": "Performance Engineering",
       "importance": [
         "Performance is not only loading speed. It includes interaction latency, rendering cost, memory, responsiveness, and stability."
@@ -7286,6 +7578,7 @@
       "subtopics": [
         {
           "id": "44.1",
+          "slug": "measurement-first",
           "title": "Measurement First",
           "groups": [
             {
@@ -7316,6 +7609,7 @@
         },
         {
           "id": "44.2",
+          "slug": "loading-performance",
           "title": "Loading Performance",
           "groups": [
             {
@@ -7338,6 +7632,7 @@
         },
         {
           "id": "44.3",
+          "slug": "interaction-performance",
           "title": "Interaction Performance",
           "groups": [
             {
@@ -7358,6 +7653,7 @@
         },
         {
           "id": "44.4",
+          "slug": "core-user-centric-metrics",
           "title": "Core User-Centric Metrics",
           "groups": [
             {
@@ -7386,6 +7682,7 @@
         },
         {
           "id": "44.5",
+          "slug": "performance-budgets",
           "title": "Performance Budgets",
           "groups": [
             {
@@ -7418,6 +7715,7 @@
     },
     {
       "id": "45",
+      "slug": "react-performance",
       "title": "React Performance",
       "importance": [
         "React optimization should target real expensive work, not simply the number of renders."
@@ -7425,6 +7723,7 @@
       "subtopics": [
         {
           "id": "45.1",
+          "slug": "rerenders",
           "title": "Rerenders",
           "groups": [
             {
@@ -7453,6 +7752,7 @@
         },
         {
           "id": "45.2",
+          "slug": "component-boundaries",
           "title": "Component Boundaries",
           "groups": [
             {
@@ -7470,6 +7770,7 @@
         },
         {
           "id": "45.3",
+          "slug": "memoization",
           "title": "Memoization",
           "groups": [
             {
@@ -7508,6 +7809,7 @@
         },
         {
           "id": "45.4",
+          "slug": "context-performance",
           "title": "Context Performance",
           "groups": [
             {
@@ -7536,6 +7838,7 @@
         },
         {
           "id": "45.5",
+          "slug": "large-lists",
           "title": "Large Lists",
           "groups": [
             {
@@ -7566,6 +7869,7 @@
     },
     {
       "id": "46",
+      "slug": "bundle-performance",
       "title": "Bundle Performance",
       "importance": [
         "JavaScript must be downloaded, parsed, compiled, and executed. Large bundles affect all four stages."
@@ -7573,6 +7877,7 @@
       "subtopics": [
         {
           "id": "46.1",
+          "slug": "tree-shaking",
           "title": "Tree Shaking",
           "groups": [
             {
@@ -7590,6 +7895,7 @@
         },
         {
           "id": "46.2",
+          "slug": "code-splitting",
           "title": "Code Splitting",
           "groups": [
             {
@@ -7621,6 +7927,7 @@
         },
         {
           "id": "46.3",
+          "slug": "dynamic-imports",
           "title": "Dynamic Imports",
           "groups": [
             {
@@ -7646,6 +7953,7 @@
         },
         {
           "id": "46.4",
+          "slug": "dependency-analysis",
           "title": "Dependency Analysis",
           "groups": [
             {
@@ -7666,6 +7974,7 @@
         },
         {
           "id": "46.5",
+          "slug": "source-maps",
           "title": "Source Maps",
           "groups": [
             {
@@ -7685,6 +7994,7 @@
     },
     {
       "id": "47",
+      "slug": "memory-management",
       "title": "Memory Management",
       "importance": [
         "Memory leaks cause slowdowns, crashes, and degraded long-running application sessions."
@@ -7692,6 +8002,7 @@
       "subtopics": [
         {
           "id": "47.1",
+          "slug": "garbage-collection",
           "title": "Garbage Collection",
           "groups": [
             {
@@ -7709,6 +8020,7 @@
         },
         {
           "id": "47.2",
+          "slug": "common-leak-sources",
           "title": "Common Leak Sources",
           "groups": [
             {
@@ -7732,6 +8044,7 @@
         },
         {
           "id": "47.3",
+          "slug": "detached-dom-nodes",
           "title": "Detached DOM Nodes",
           "groups": [
             {
@@ -7757,6 +8070,7 @@
         },
         {
           "id": "47.4",
+          "slug": "cache-limits",
           "title": "Cache Limits",
           "groups": [
             {
@@ -7780,6 +8094,7 @@
     },
     {
       "id": "48",
+      "slug": "frontend-testing",
       "title": "Frontend Testing",
       "importance": [
         "Testing should provide confidence in user behavior, domain logic, integrations, and critical workflows."
@@ -7787,6 +8102,7 @@
       "subtopics": [
         {
           "id": "48.1",
+          "slug": "unit-testing",
           "title": "Unit Testing",
           "groups": [
             {
@@ -7818,6 +8134,7 @@
         },
         {
           "id": "48.2",
+          "slug": "component-testing",
           "title": "Component Testing",
           "groups": [
             {
@@ -7845,6 +8162,7 @@
         },
         {
           "id": "48.3",
+          "slug": "integration-testing",
           "title": "Integration Testing",
           "groups": [
             {
@@ -7871,6 +8189,7 @@
         },
         {
           "id": "48.4",
+          "slug": "end-to-end-testing",
           "title": "End-to-End Testing",
           "groups": [
             {
@@ -7902,6 +8221,7 @@
         },
         {
           "id": "48.5",
+          "slug": "contract-testing",
           "title": "Contract Testing",
           "groups": [
             {
@@ -7924,6 +8244,7 @@
         },
         {
           "id": "48.6",
+          "slug": "accessibility-testing",
           "title": "Accessibility Testing",
           "groups": [
             {
@@ -7951,6 +8272,7 @@
         },
         {
           "id": "48.7",
+          "slug": "performance-testing",
           "title": "Performance Testing",
           "groups": [
             {
@@ -7972,6 +8294,7 @@
     },
     {
       "id": "49",
+      "slug": "frontend-security",
       "title": "Frontend Security",
       "importance": [
         "Frontend code executes in an untrusted user-controlled environment. Security requires browser, backend, and infrastructure cooperation."
@@ -7979,6 +8302,7 @@
       "subtopics": [
         {
           "id": "49.1",
+          "slug": "cross-site-scripting",
           "title": "Cross-Site Scripting",
           "groups": [
             {
@@ -8018,6 +8342,7 @@
         },
         {
           "id": "49.2",
+          "slug": "csrf",
           "title": "CSRF",
           "groups": [
             {
@@ -8053,6 +8378,7 @@
         },
         {
           "id": "49.3",
+          "slug": "content-security-policy",
           "title": "Content Security Policy",
           "groups": [
             {
@@ -8083,6 +8409,7 @@
         },
         {
           "id": "49.4",
+          "slug": "clickjacking",
           "title": "Clickjacking",
           "groups": [
             {
@@ -8106,6 +8433,7 @@
         },
         {
           "id": "49.5",
+          "slug": "open-redirects",
           "title": "Open Redirects",
           "groups": [
             {
@@ -8130,6 +8458,7 @@
         },
         {
           "id": "49.6",
+          "slug": "frontend-secrets",
           "title": "Frontend Secrets",
           "groups": [
             {
@@ -8152,6 +8481,7 @@
         },
         {
           "id": "49.7",
+          "slug": "sensitive-logging",
           "title": "Sensitive Logging",
           "groups": [
             {
@@ -8174,6 +8504,7 @@
         },
         {
           "id": "49.8",
+          "slug": "dependency-security",
           "title": "Dependency Security",
           "groups": [
             {
@@ -8196,6 +8527,7 @@
     },
     {
       "id": "50",
+      "slug": "reliability-and-failure-handling",
       "title": "Reliability and Failure Handling",
       "importance": [
         "Production applications must continue behaving usefully when networks, APIs, sessions, or individual features fail."
@@ -8203,6 +8535,7 @@
       "subtopics": [
         {
           "id": "50.1",
+          "slug": "timeouts",
           "title": "Timeouts",
           "groups": [
             {
@@ -8220,6 +8553,7 @@
         },
         {
           "id": "50.2",
+          "slug": "retries",
           "title": "Retries",
           "groups": [
             {
@@ -8238,6 +8572,7 @@
         },
         {
           "id": "50.3",
+          "slug": "partial-failure",
           "title": "Partial Failure",
           "groups": [
             {
@@ -8259,6 +8594,7 @@
         },
         {
           "id": "50.4",
+          "slug": "graceful-degradation",
           "title": "Graceful Degradation",
           "groups": [
             {
@@ -8280,6 +8616,7 @@
         },
         {
           "id": "50.5",
+          "slug": "offline-handling",
           "title": "Offline Handling",
           "groups": [
             {
@@ -8298,6 +8635,7 @@
         },
         {
           "id": "50.6",
+          "slug": "duplicate-submission",
           "title": "Duplicate Submission",
           "groups": [
             {
@@ -8318,6 +8656,7 @@
     },
     {
       "id": "51",
+      "slug": "frontend-architecture",
       "title": "Frontend Architecture",
       "importance": [
         "Architecture defines boundaries, ownership, dependency direction, change isolation, and how teams work safely at scale."
@@ -8325,6 +8664,7 @@
       "subtopics": [
         {
           "id": "51.1",
+          "slug": "feature-based-architecture",
           "title": "Feature-Based Architecture",
           "groups": [
             {
@@ -8360,6 +8700,7 @@
         },
         {
           "id": "51.2",
+          "slug": "layered-architecture",
           "title": "Layered Architecture",
           "groups": [
             {
@@ -8402,6 +8743,7 @@
         },
         {
           "id": "51.3",
+          "slug": "dependency-direction",
           "title": "Dependency Direction",
           "groups": [
             {
@@ -8422,6 +8764,7 @@
         },
         {
           "id": "51.4",
+          "slug": "public-module-apis",
           "title": "Public Module APIs",
           "groups": [
             {
@@ -8452,6 +8795,7 @@
         },
         {
           "id": "51.5",
+          "slug": "shared-code",
           "title": "Shared Code",
           "groups": [
             {
@@ -8481,6 +8825,7 @@
     },
     {
       "id": "52",
+      "slug": "component-architecture",
       "title": "Component Architecture",
       "importance": [
         "Good component boundaries improve reuse, accessibility, performance, testing, and maintenance."
@@ -8488,6 +8833,7 @@
       "subtopics": [
         {
           "id": "52.1",
+          "slug": "presentational-components",
           "title": "Presentational Components",
           "groups": [
             {
@@ -8505,6 +8851,7 @@
         },
         {
           "id": "52.2",
+          "slug": "container-components",
           "title": "Container Components",
           "groups": [
             {
@@ -8530,6 +8877,7 @@
         },
         {
           "id": "52.3",
+          "slug": "headless-components",
           "title": "Headless Components",
           "groups": [
             {
@@ -8557,6 +8905,7 @@
         },
         {
           "id": "52.4",
+          "slug": "compound-components",
           "title": "Compound Components",
           "groups": [
             {
@@ -8594,6 +8943,7 @@
         },
         {
           "id": "52.5",
+          "slug": "component-api-design",
           "title": "Component API Design",
           "groups": [
             {
@@ -8616,6 +8966,7 @@
     },
     {
       "id": "53",
+      "slug": "design-systems",
       "title": "Design Systems",
       "importance": [
         "A design system combines visual language, reusable components, accessibility, governance, and engineering standards."
@@ -8623,6 +8974,7 @@
       "subtopics": [
         {
           "id": "53.1",
+          "slug": "foundations",
           "title": "Foundations",
           "groups": [
             {
@@ -8647,6 +8999,7 @@
         },
         {
           "id": "53.2",
+          "slug": "primitives",
           "title": "Primitives",
           "groups": [
             {
@@ -8683,6 +9036,7 @@
         },
         {
           "id": "53.3",
+          "slug": "composite-components",
           "title": "Composite Components",
           "groups": [
             {
@@ -8719,6 +9073,7 @@
         },
         {
           "id": "53.4",
+          "slug": "documentation",
           "title": "Documentation",
           "groups": [
             {
@@ -8742,6 +9097,7 @@
         },
         {
           "id": "53.5",
+          "slug": "governance",
           "title": "Governance",
           "groups": [
             {
@@ -8766,6 +9122,7 @@
     },
     {
       "id": "54",
+      "slug": "monorepo-architecture",
       "title": "Monorepo Architecture",
       "importance": [
         "A monorepo can improve code sharing and coordinated tooling, but only when dependency boundaries are explicit."
@@ -8773,6 +9130,7 @@
       "subtopics": [
         {
           "id": "54.1",
+          "slug": "repository-structure",
           "title": "Repository Structure",
           "groups": [
             {
@@ -8795,6 +9153,7 @@
         },
         {
           "id": "54.2",
+          "slug": "dependency-graph",
           "title": "Dependency Graph",
           "groups": [
             {
@@ -8815,6 +9174,7 @@
         },
         {
           "id": "54.3",
+          "slug": "circular-dependencies",
           "title": "Circular Dependencies",
           "groups": [
             {
@@ -8844,6 +9204,7 @@
         },
         {
           "id": "54.4",
+          "slug": "build-caching",
           "title": "Build Caching",
           "groups": [
             {
@@ -8861,6 +9222,7 @@
         },
         {
           "id": "54.5",
+          "slug": "shared-configuration",
           "title": "Shared Configuration",
           "groups": [
             {
@@ -8891,6 +9253,7 @@
     },
     {
       "id": "55",
+      "slug": "microfrontends",
       "title": "Microfrontends",
       "importance": [
         "Microfrontends are an organizational and deployment architecture, not merely a code-splitting technique."
@@ -8898,6 +9261,7 @@
       "subtopics": [
         {
           "id": "55.1",
+          "slug": "when-they-may-help",
           "title": "When They May Help",
           "groups": [
             {
@@ -8916,6 +9280,7 @@
         },
         {
           "id": "55.2",
+          "slug": "integration-approaches",
           "title": "Integration Approaches",
           "groups": [
             {
@@ -8935,6 +9300,7 @@
         },
         {
           "id": "55.3",
+          "slug": "key-challenges",
           "title": "Key Challenges",
           "groups": [
             {
@@ -8958,6 +9324,7 @@
         },
         {
           "id": "55.4",
+          "slug": "communication",
           "title": "Communication",
           "groups": [
             {
@@ -8982,6 +9349,7 @@
         },
         {
           "id": "55.5",
+          "slug": "failure-isolation",
           "title": "Failure Isolation",
           "groups": [
             {
@@ -9002,6 +9370,7 @@
     },
     {
       "id": "56",
+      "slug": "backend-for-frontend",
       "title": "Backend for Frontend",
       "importance": [
         "A BFF provides APIs tailored to frontend workflows and can securely manage sessions and downstream orchestration."
@@ -9009,6 +9378,7 @@
       "subtopics": [
         {
           "id": "56.1",
+          "slug": "responsibilities",
           "title": "Responsibilities",
           "groups": [
             {
@@ -9031,6 +9401,7 @@
         },
         {
           "id": "56.2",
+          "slug": "what-should-not-be-added-carelessly",
           "title": "What Should Not Be Added Carelessly",
           "groups": [
             {
@@ -9050,6 +9421,7 @@
         },
         {
           "id": "56.3",
+          "slug": "failure-handling",
           "title": "Failure Handling",
           "groups": [
             {
@@ -9073,6 +9445,7 @@
     },
     {
       "id": "57",
+      "slug": "feature-flags-and-remote-configuration",
       "title": "Feature Flags and Remote Configuration",
       "importance": [
         "Feature flags separate deployment from release and allow controlled rollout, experimentation, and emergency shutdown."
@@ -9080,6 +9453,7 @@
       "subtopics": [
         {
           "id": "57.1",
+          "slug": "flag-types",
           "title": "Flag Types",
           "groups": [
             {
@@ -9107,6 +9481,7 @@
         },
         {
           "id": "57.2",
+          "slug": "initialization",
           "title": "Initialization",
           "groups": [
             {
@@ -9125,6 +9500,7 @@
         },
         {
           "id": "57.3",
+          "slug": "flag-lifecycle",
           "title": "Flag Lifecycle",
           "groups": [
             {
@@ -9155,6 +9531,7 @@
         },
         {
           "id": "57.4",
+          "slug": "testing",
           "title": "Testing",
           "groups": [
             {
@@ -9179,6 +9556,7 @@
     },
     {
       "id": "58",
+      "slug": "observability",
       "title": "Observability",
       "importance": [
         "Observability helps reconstruct failures, measure user impact, and connect frontend behavior with backend systems."
@@ -9186,6 +9564,7 @@
       "subtopics": [
         {
           "id": "58.1",
+          "slug": "logging",
           "title": "Logging",
           "groups": [
             {
@@ -9216,6 +9595,7 @@
         },
         {
           "id": "58.2",
+          "slug": "error-monitoring",
           "title": "Error Monitoring",
           "groups": [
             {
@@ -9245,6 +9625,7 @@
         },
         {
           "id": "58.3",
+          "slug": "real-user-monitoring",
           "title": "Real User Monitoring",
           "groups": [
             {
@@ -9276,6 +9657,7 @@
         },
         {
           "id": "58.4",
+          "slug": "session-replay",
           "title": "Session Replay",
           "groups": [
             {
@@ -9308,6 +9690,7 @@
         },
         {
           "id": "58.5",
+          "slug": "correlation-ids",
           "title": "Correlation IDs",
           "groups": [
             {
@@ -9328,6 +9711,7 @@
     },
     {
       "id": "59",
+      "slug": "ci-cd-and-frontend-delivery",
       "title": "CI/CD and Frontend Delivery",
       "importance": [
         "A reliable delivery pipeline validates quality, produces immutable artifacts, and supports safe release and rollback."
@@ -9335,6 +9719,7 @@
       "subtopics": [
         {
           "id": "59.1",
+          "slug": "ci-validation-order",
           "title": "CI Validation Order",
           "groups": [
             {
@@ -9359,6 +9744,7 @@
         },
         {
           "id": "59.2",
+          "slug": "build-time-versus-runtime-configuration",
           "title": "Build-Time Versus Runtime Configuration",
           "groups": [
             {
@@ -9389,6 +9775,7 @@
         },
         {
           "id": "59.3",
+          "slug": "immutable-artifacts",
           "title": "Immutable Artifacts",
           "groups": [
             {
@@ -9407,6 +9794,7 @@
         },
         {
           "id": "59.4",
+          "slug": "progressive-delivery",
           "title": "Progressive Delivery",
           "groups": [
             {
@@ -9438,6 +9826,7 @@
         },
         {
           "id": "59.5",
+          "slug": "rollback",
           "title": "Rollback",
           "groups": [
             {
@@ -9462,6 +9851,7 @@
     },
     {
       "id": "60",
+      "slug": "frontend-system-design",
       "title": "Frontend System Design",
       "importance": [
         "System design connects product requirements with architecture, data flow, performance, security, reliability, and team ownership."
@@ -9469,6 +9859,7 @@
       "subtopics": [
         {
           "id": "60.1",
+          "slug": "requirement-analysis",
           "title": "Requirement Analysis",
           "groups": [
             {
@@ -9494,6 +9885,7 @@
         },
         {
           "id": "60.2",
+          "slug": "data-modeling",
           "title": "Data Modeling",
           "groups": [
             {
@@ -9518,6 +9910,7 @@
         },
         {
           "id": "60.3",
+          "slug": "application-boundaries",
           "title": "Application Boundaries",
           "groups": [
             {
@@ -9543,6 +9936,7 @@
         },
         {
           "id": "60.4",
+          "slug": "data-flow",
           "title": "Data Flow",
           "groups": [
             {
@@ -9567,6 +9961,7 @@
         },
         {
           "id": "60.5",
+          "slug": "performance-design",
           "title": "Performance Design",
           "groups": [
             {
@@ -9591,6 +9986,7 @@
         },
         {
           "id": "60.6",
+          "slug": "security-design",
           "title": "Security Design",
           "groups": [
             {
@@ -9616,6 +10012,7 @@
         },
         {
           "id": "60.7",
+          "slug": "reliability-design",
           "title": "Reliability Design",
           "groups": [
             {
@@ -9640,6 +10037,7 @@
         },
         {
           "id": "60.8",
+          "slug": "observability-design",
           "title": "Observability Design",
           "groups": [
             {
@@ -9665,6 +10063,7 @@
     },
     {
       "id": "61",
+      "slug": "architecture-documentation",
       "title": "Architecture Documentation",
       "importance": [
         "Architecture that exists only in one engineer’s mind cannot be safely maintained."
@@ -9672,6 +10071,7 @@
       "subtopics": [
         {
           "id": "61.1",
+          "slug": "system-context-diagram",
           "title": "System Context Diagram",
           "groups": [
             {
@@ -9695,6 +10095,7 @@
         },
         {
           "id": "61.2",
+          "slug": "container-diagram",
           "title": "Container Diagram",
           "groups": [
             {
@@ -9717,6 +10118,7 @@
         },
         {
           "id": "61.3",
+          "slug": "component-diagram",
           "title": "Component Diagram",
           "groups": [
             {
@@ -9740,6 +10142,7 @@
         },
         {
           "id": "61.4",
+          "slug": "sequence-diagram",
           "title": "Sequence Diagram",
           "groups": [
             {
@@ -9765,6 +10168,7 @@
         },
         {
           "id": "61.5",
+          "slug": "architecture-decision-record",
           "title": "Architecture Decision Record",
           "groups": [
             {
@@ -9792,6 +10196,7 @@
     },
     {
       "id": "62",
+      "slug": "ai-powered-frontend-applications",
       "title": "AI-Powered Frontend Applications",
       "importance": [
         "AI applications introduce probabilistic output, streaming, tool execution, safety, structured data validation, and cost concerns."
@@ -9799,6 +10204,7 @@
       "subtopics": [
         {
           "id": "62.1",
+          "slug": "streaming-responses",
           "title": "Streaming Responses",
           "groups": [
             {
@@ -9818,6 +10224,7 @@
         },
         {
           "id": "62.2",
+          "slug": "structured-output",
           "title": "Structured Output",
           "groups": [
             {
@@ -9836,6 +10243,7 @@
         },
         {
           "id": "62.3",
+          "slug": "conversation-state",
           "title": "Conversation State",
           "groups": [
             {
@@ -9871,6 +10279,7 @@
         },
         {
           "id": "62.4",
+          "slug": "tool-calls",
           "title": "Tool Calls",
           "groups": [
             {
@@ -9902,6 +10311,7 @@
         },
         {
           "id": "62.5",
+          "slug": "human-approval",
           "title": "Human Approval",
           "groups": [
             {
@@ -9924,6 +10334,7 @@
         },
         {
           "id": "62.6",
+          "slug": "ai-uncertainty",
           "title": "AI Uncertainty",
           "groups": [
             {
@@ -9942,6 +10353,7 @@
         },
         {
           "id": "62.7",
+          "slug": "ai-security",
           "title": "AI Security",
           "groups": [
             {
@@ -9976,6 +10388,7 @@
         },
         {
           "id": "62.8",
+          "slug": "ai-cost-and-performance",
           "title": "AI Cost and Performance",
           "groups": [
             {
@@ -10012,6 +10425,7 @@
         },
         {
           "id": "62.9",
+          "slug": "ai-evaluation",
           "title": "AI Evaluation",
           "groups": [
             {
@@ -10045,6 +10459,7 @@
     },
     {
       "id": "63",
+      "slug": "git-and-engineering-collaboration",
       "title": "Git and Engineering Collaboration",
       "importance": [
         "Senior frontend engineers must understand version control beyond basic commit and push operations."
@@ -10052,6 +10467,7 @@
       "subtopics": [
         {
           "id": "63.1",
+          "slug": "commit-design",
           "title": "Commit Design",
           "groups": [
             {
@@ -10072,6 +10488,7 @@
         },
         {
           "id": "63.2",
+          "slug": "merge-and-rebase",
           "title": "Merge and Rebase",
           "groups": [
             {
@@ -10105,6 +10522,7 @@
         },
         {
           "id": "63.3",
+          "slug": "cherry-pick",
           "title": "Cherry-Pick",
           "groups": [
             {
@@ -10130,6 +10548,7 @@
         },
         {
           "id": "63.4",
+          "slug": "reflog",
           "title": "Reflog",
           "groups": [
             {
@@ -10149,6 +10568,7 @@
         },
         {
           "id": "63.5",
+          "slug": "bisect",
           "title": "Bisect",
           "groups": [
             {
@@ -10171,6 +10591,7 @@
         },
         {
           "id": "63.6",
+          "slug": "pull-requests",
           "title": "Pull Requests",
           "groups": [
             {
@@ -10197,6 +10618,7 @@
     },
     {
       "id": "64",
+      "slug": "internationalization-and-localization",
       "title": "Internationalization and Localization",
       "importance": [
         "Global applications must support different languages, currencies, dates, numbers, directions, and time zones."
@@ -10204,6 +10626,7 @@
       "subtopics": [
         {
           "id": "64.1",
+          "slug": "translation",
           "title": "Translation",
           "groups": [
             {
@@ -10222,6 +10645,7 @@
         },
         {
           "id": "64.2",
+          "slug": "dates-and-time-zones",
           "title": "Dates and Time Zones",
           "groups": [
             {
@@ -10240,6 +10664,7 @@
         },
         {
           "id": "64.3",
+          "slug": "number-and-currency-formatting",
           "title": "Number and Currency Formatting",
           "groups": [
             {
@@ -10260,6 +10685,7 @@
         },
         {
           "id": "64.4",
+          "slug": "right-to-left-layout",
           "title": "Right-to-Left Layout",
           "groups": [
             {
@@ -10277,6 +10703,7 @@
         },
         {
           "id": "64.5",
+          "slug": "text-expansion",
           "title": "Text Expansion",
           "groups": [
             {
@@ -10300,6 +10727,7 @@
     },
     {
       "id": "65",
+      "slug": "progressive-web-applications-and-offline-systems",
       "title": "Progressive Web Applications and Offline Systems",
       "importance": [
         "PWA and offline support require deliberate caching, synchronization, updates, and conflict management."
@@ -10307,6 +10735,7 @@
       "subtopics": [
         {
           "id": "65.1",
+          "slug": "service-workers",
           "title": "Service Workers",
           "groups": [
             {
@@ -10325,6 +10754,7 @@
         },
         {
           "id": "65.2",
+          "slug": "cache-strategies",
           "title": "Cache Strategies",
           "groups": [
             {
@@ -10373,6 +10803,7 @@
         },
         {
           "id": "65.3",
+          "slug": "update-lifecycle",
           "title": "Update Lifecycle",
           "groups": [
             {
@@ -10390,6 +10821,7 @@
         },
         {
           "id": "65.4",
+          "slug": "offline-mutation-queue",
           "title": "Offline Mutation Queue",
           "groups": [
             {
@@ -10412,11 +10844,13 @@
     },
     {
       "id": "66",
+      "slug": "final-mastery-requirements",
       "title": "Final Mastery Requirements",
       "importance": [],
       "subtopics": [
         {
           "id": "66.0",
+          "slug": "overview",
           "title": "Topic overview",
           "groups": [
             {
@@ -10431,6 +10865,7 @@
         },
         {
           "id": "66.2",
+          "slug": "conceptual-understanding",
           "title": "Conceptual understanding",
           "groups": [
             {
@@ -10448,6 +10883,7 @@
         },
         {
           "id": "66.3",
+          "slug": "implementation-understanding",
           "title": "Implementation understanding",
           "groups": [
             {
@@ -10465,6 +10901,7 @@
         },
         {
           "id": "66.4",
+          "slug": "debugging-understanding",
           "title": "Debugging understanding",
           "groups": [
             {
@@ -10482,6 +10919,7 @@
         },
         {
           "id": "66.5",
+          "slug": "architectural-understanding",
           "title": "Architectural understanding",
           "groups": [
             {
@@ -10500,6 +10938,7 @@
         },
         {
           "id": "66.6",
+          "slug": "production-understanding",
           "title": "Production understanding",
           "groups": [
             {
@@ -10518,6 +10957,7 @@
         },
         {
           "id": "66.7",
+          "slug": "teaching-understanding",
           "title": "Teaching understanding",
           "groups": [
             {

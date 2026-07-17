@@ -17,10 +17,16 @@ const clean = (value) => value
   .replace(/\*([^*]+)\*/g, "$1")
   .trim();
 
+const slugify = (value) => clean(value)
+  .toLowerCase()
+  .replace(/&/g, " and ")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "");
+
 const ensureSubtopic = () => {
   if (!topic) return null;
   if (!subtopic) {
-    subtopic = { id: `${topic.id}.0`, title: "Topic overview", groups: [] };
+    subtopic = { id: `${topic.id}.0`, slug: "overview", title: "Topic overview", groups: [] };
     topic.subtopics.push(subtopic);
   }
   return subtopic;
@@ -57,7 +63,7 @@ for (const rawLine of lines) {
 
   const topicMatch = line.match(/^#\s+(\d+)\.\s+(.+)$/);
   if (topicMatch) {
-    topic = { id: topicMatch[1], title: clean(topicMatch[2]), importance: [], subtopics: [] };
+    topic = { id: topicMatch[1], slug: slugify(topicMatch[2]), title: clean(topicMatch[2]), importance: [], subtopics: [] };
     curriculum.topics.push(topic);
     subtopic = null;
     group = null;
@@ -70,9 +76,9 @@ for (const rawLine of lines) {
   if (subtopicMatch) {
     const title = clean(subtopicMatch[2]);
     if (title.toLowerCase() === "topic importance") {
-      subtopic = { id: `${topic.id}.importance`, title: "Why this topic matters", groups: [{ title: "Topic importance", items: [], prose: [], code: [] }] };
+      subtopic = { id: `${topic.id}.importance`, slug: "why-this-topic-matters", title: "Why this topic matters", groups: [{ title: "Topic importance", items: [], prose: [], code: [] }] };
     } else {
-      subtopic = { id: subtopicMatch[1] ?? `${topic.id}.${topic.subtopics.length + 1}`, title, groups: [] };
+      subtopic = { id: subtopicMatch[1] ?? `${topic.id}.${topic.subtopics.length + 1}`, slug: slugify(title), title, groups: [] };
     }
     topic.subtopics.push(subtopic);
     group = subtopic.groups[0] ?? null;

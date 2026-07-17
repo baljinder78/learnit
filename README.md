@@ -1,44 +1,48 @@
 # Frontend Atlas
 
-Frontend Atlas is an interactive eight-week learning system for experienced frontend engineers. It teaches concepts through controlled visual traces, focused code, production consequences, architecture decisions, practice, and interview reasoning.
+Frontend Atlas is a local, interactive knowledge map for frontend engineering. It is organized as a durable reference rather than a course schedule:
 
-## What is implemented
+```text
+Topic → Subtopic → Important concepts → Key things to understand → Practical mastery
+```
 
-- A responsive dashboard with progress, streak, quiz, exercise, revision, and interview-readiness signals.
-- A complete sequential mastery map with 66 topics, 374 subtopics, 656 learning sections, and more than 2,900 concepts, explanations, questions, examples, and practical mastery tasks.
-- Twelve fully structured Week 1 lessons with all thirteen teaching sections requested in the brief.
-- A statement-by-statement event-loop lab with call stack, browser APIs, microtask queue, task queue, promise state, console output, play/pause, previous/next, restart, speed, and current-state inspection.
-- Reusable concept traces, code panels, ordering exercises, quizzes with feedback, production examples, architecture views, and interview prompts.
-- Topic explorer, searchable visual lab, coding-practice editor with test feedback, timed interview mode, revision flashcards, weak-topic queue, knowledge graph, and draggable system-design canvas.
-- Dark/light themes, reduced-motion handling, keyboard focus styles, semantic controls, responsive layouts, and device-local progress persistence.
+## What is included
 
-## Architecture
+- 65 focused frontend topics and 370+ subtopics, grouped into eight navigable domains.
+- Dedicated URLs for every topic and subtopic.
+- Progressive explanations covering definitions, purpose, mental models, internal behavior, usage, edge cases, mistakes, and related concepts.
+- A dedicated syntax section for every subtopic, with a focused code sample, the behavior it proves, and a small experiment to try next.
+- A controllable visualizer on every topic and subtopic page, with play, pause, step, reset, and speed controls.
+- A global frontend knowledge map plus a clickable mind map for each topic.
+- Search, breadcrumbs, in-page navigation, previous/next links, a locally saved light/dark theme, responsive layouts, and reduced-motion support.
+- A reading shelf that maps the attached *You Don’t Know JS* series and *Architect Mode — Career Field Guide* to the relevant topics without copying the source books into the project.
+- A canonical Markdown curriculum that generates the application data.
 
-The project intentionally keeps content, product state, and rendering separate:
+The product deliberately excludes schedules, streaks, quizzes, revision queues, interview modes, project trackers, and progress dashboards. It is a topic-first reference for understanding how frontend systems work.
+
+## Project structure
 
 ```text
 app/
-├── mastery-data.json  # Generated 66-topic sequential knowledge map
-├── curriculum.ts      # Weeks, modules, topics, detailed Week 1 lessons, relationships
-├── LearningApp.tsx    # Product modes, reusable visualizations, exercises, local adapter
-├── page.tsx           # Route entry and page metadata
-├── layout.tsx         # Root metadata, fonts, theme root
-└── globals.css        # Visual system, diagrams, responsive and accessibility rules
-tests/
-└── rendered-html.test.mjs
+├── KnowledgeApp.tsx       # Knowledge navigation, teaching pages, visualizers, mind maps
+├── knowledge.css          # Complete responsive visual system
+├── learning-examples.ts   # Syntax examples and attached-book reading maps
+├── mastery-data.json      # Generated sequential frontend knowledge map
+├── learn/[topic]/         # Dedicated topic routes
+├── learn/[topic]/[subtopic]/ # Dedicated subtopic routes
+├── page.tsx               # Global knowledge-map entry
+└── layout.tsx             # Local application shell and metadata
 content/
-└── mastery-curriculum.md # Canonical curriculum source
+└── mastery-curriculum.md  # Canonical curriculum source
 scripts/
-└── build-mastery-data.mjs # Reproducible Markdown-to-data parser
+└── build-mastery-data.mjs # Markdown-to-data parser
+tests/
+└── rendered-html.test.mjs # Build and knowledge-product contracts
 ```
-
-Progress is accessed through a small storage adapter (`progressStore`) rather than directly throughout the UI. Replacing it with an authenticated backend later only requires changing that adapter and hydration strategy.
-
-The full curriculum is modeled as `Topic → Subtopic → Learning group → Learning point`. Learning groups preserve important concepts, key things to understand, examples, questions, and practical mastery separately. The original guided lessons remain a deeper visual layer linked from the sequential map.
 
 ## Run locally
 
-Node.js 22.13 or newer is required.
+Node.js 22.13 or newer is required. Node 20 does not expose the `node:fs/promises` `glob` API required by Vinext.
 
 ```bash
 nvm install
@@ -46,8 +50,6 @@ nvm use
 npm install
 npm run dev
 ```
-
-If a terminal still reports Node 20, run `nvm use` in that terminal before starting the app. Vinext relies on Node APIs that are unavailable in Node 20.
 
 Open the local URL printed by the development server.
 
@@ -58,33 +60,13 @@ npm run lint
 npm test
 ```
 
-`npm test` creates the production build and verifies server rendering, curriculum coverage, local persistence, accessibility controls, and the primary learning-flow contracts.
+`npm test` regenerates the content data, creates the local production build, and verifies server rendering, routes, hierarchy, syntax examples, attached-reading maps, interactive-learning controls, accessibility contracts, and the absence of the removed course-management surfaces.
 
-## Extending the curriculum
+## Extend the curriculum
 
-1. Add topics to the appropriate module in `app/curriculum.ts`.
-2. For the complete mastery map, edit `content/mastery-curriculum.md` and run `npm run content:build`.
-3. Add a detailed lesson object when the topic needs a full guided visual lesson.
-4. Choose the most accurate `VisualKind`, or add a new visual grammar when the mechanism cannot be taught well with an existing one.
-5. Add a focused test for any new state transition or persistence behavior.
+1. Edit `content/mastery-curriculum.md`.
+2. Preserve the hierarchy `Topic → Subtopic → Learning group → Learning point`.
+3. Run `npm run content:build` to regenerate `app/mastery-data.json`.
+4. Run `npm test` before using the updated reference.
 
-## Roadmap mapping
-
-| Week | Implemented surface |
-| --- | --- |
-| 1 · JavaScript & TypeScript | Complete guided lessons, event-loop lab, memory/type traces, exercises, quizzes, interviews |
-| 2 · Browser, network, security | Curriculum pages plus rendering, waterfall, storage, and attack/defence visual-lab models |
-| 3 · React mastery | Curriculum pages plus renderer timeline, hooks failure models, state-placement map |
-| 4 · Testing, accessibility, quality | Curriculum pages plus testing pyramid and focus-flow lab models |
-| 5 · Architecture | Curriculum pages plus dependency and boundary graph models |
-| 6 · System design | Guided cases and draggable decision canvas with coherence signals |
-| 7 · AI frontend engineering | Curriculum pages plus retrieval/tool/human-approval pipeline model |
-| 8 · Interview preparation | Timed reasoning room, implementation practice, revision system, preparation topics |
-
-## Known limitations and next improvements
-
-- Progress is intentionally local to one browser and has no account synchronization.
-- Week 1 is the fully authored reference module. Weeks 2–8 have complete curriculum coverage and purpose-built visual lab entries, but should be expanded into the same depth of authored lesson narrative over time.
-- The practice editor uses deterministic in-browser contract checks rather than an isolated JavaScript/TypeScript sandbox.
-- The system-design canvas supports draggable nodes and decision recording UI; persistent connectors, import/export, and collaborative review are natural next additions.
-- Revision scheduling currently uses a compact weak-topic queue rather than a full SM-2-style scheduler.
+The application is intentionally local-only and contains no deployment, worker, cloud database, or hosting configuration.
