@@ -8,8 +8,10 @@
   "scripts": {
     "content:build": "node scripts/build-mastery-data.mjs",
     "prebuild": "npm run content:build",
+    "prebuild:netlify": "npm run content:build",
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:netlify": "next build",
     "start": "vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
